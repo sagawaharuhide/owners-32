@@ -1,24 +1,72 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many :owner_deliveries
+- has_many :orders
 
-Things you may want to cover:
+## owner_deliveriesテーブル
 
-* Ruby version
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|postal_code|integer|null: false|
+|prefecture|string|null: false|
+|address1|string|null: false|
+|address2|integer|null: false|
+|tel|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
 
-* System dependencies
+### Association
+- belongs_to :user
 
-* Configuration
+## plansテーブル
 
-* Database creation
+|Column|Type|Options|
+|------|----|-------|
+|producer|string|null: false|
+|area|string|null: false|
+|set_price|integer|null: false|
+|dead_line|date|null: false|
 
-* Database initialization
+### Association
+- has_many : courses
 
-* How to run the test suite
+## coursesテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|price|integer|null: false|
+|detail|text|null: false|
+|plan_id|references|null: false, foreign_key: true|
 
-* Deployment instructions
+### Association
+- belongs_to : plan
+- has_many : order_details
+- has_many : orders, through: :order_details
 
-* ...
+## ordersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|plan_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|owner_delivery_id|references|null: false, foreign_key: true|
+
+### Association
+- has_many : order_details
+- has_many : courses, through: :order_details
+- has_one : owner_delivery
+- belongs_to : user
+
+## order_detailsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|number|integer|null: false|
+|course_id|references|null: false, foreign_key: true|
+|order_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to : order
+- belongs_to : course
