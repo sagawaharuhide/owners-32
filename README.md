@@ -1,8 +1,7 @@
 ## usersテーブル
 
 ### Association
-- has_many :owner_deliveries
-- has_many :orders
+- has_many : owner_deliveries
 
 ## owner_deliveriesテーブル
 
@@ -17,7 +16,8 @@
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user
+- belongs_to : user
+- has_many : orders
 
 ## plansテーブル
 
@@ -49,15 +49,14 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|plan_id|references|null: false, foreign_key: true|
-|user_id|references|null: false, foreign_key: true|
+|payment_method|string|null: false|
 |owner_delivery_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many : order_details
 - has_many : courses, through: :order_details
-- has_one : owner_delivery
-- belongs_to : user
+- delegate_to : user, to: :owner_delivery
+- belongs_to : owner_delivery
 
 ## order_detailsテーブル
 
