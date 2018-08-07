@@ -2,7 +2,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |last_name|string|null: false|
-|first_name|integer|null: false|
+|first_name|string|null: false|
 
 ### Association
 - has_many : owner_deliveries
