@@ -5,17 +5,17 @@
 |first_name|string|null: false|
 
 ### Association
-- has_many : owner_deliveries
+- has_many : addresses
 
-## user_deliveriesテーブル
+## addressesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|full_name|string|null: false|
 |postal_code|integer|null: false|
 |prefecture|string|null: false|
-|address1|string|null: false|
-|address2|integer|null: false|
+|city|string|null: false|
+|house_number|string|null: false|
 |tel|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
 
@@ -63,7 +63,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|number|integer|null: false|
+|quantity|integer|null: false|
 |course_id|references|null: false, foreign_key: true|
 |order_id|references|null: false, foreign_key: true|
 
