@@ -51,13 +51,13 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|owner_delivery_id|references|null: false, foreign_key: true|
+|address_id|references|null: false, foreign_key: true|
 
 ### Association
 - has_many : order_details
 - has_many : courses, through: :order_details
-- delegate_to : user, to: :owner_delivery
-- belongs_to : owner_delivery
+- delegate_to : user, to: :address
+- belongs_to : address
 
 ## order_detailsテーブル
 
