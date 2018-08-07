@@ -7,7 +7,7 @@
 ### Association
 - has_many : owner_deliveries
 
-## owner_deliveriesテーブル
+## user_deliveriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -53,7 +53,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|payment_method|string|null: false|
 |owner_delivery_id|references|null: false, foreign_key: true|
 
 ### Association
