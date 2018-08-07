@@ -29,7 +29,6 @@
 |------|----|-------|
 |producer|string|null: false|
 |area|string|null: false|
-|set_price|integer|null: false|
 |dead_line|date|null: false|
 
 ### Association
