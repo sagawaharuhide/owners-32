@@ -1,2 +1,157 @@
-<h1>Owners32</h1>
-<p>Find me in app/views/startup/index.html.erb</p>
+<header class="index  d-log-block">
+  <nav class="d-flex align-itmes-center sticky">
+    <a href="#" class="mr-auto">
+      <%= image_tag 'logo.png', size:'150x40' %>
+    </a>
+    <div class="ml-3">
+      <a href="#" class="d-flex justify-content-end about"> OWNERSについて </a>
+    </div>
+    <div class="ml-3">
+      <a href="#" class="guide"> ご利用ガイド </a>
+    </div>
+    <div class="ml-3">
+      <a href="/owners/signup" class="signup_login"> 会員登録 </a>
+    </div>
+    <div class="ml-3 mr-2">
+      <a href="/owners/login" class="signup_login"> ログイン </a>
+    </div>
+<!-- 会員登録機能が出来次第使用
+ --><!--     <div class="dropdown authenticated_header_menu">
+      <button class="dropdown-toggle dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img src=""> OwnerName
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/owners/mypage"> マイページ </a>
+        <hr>
+        <a class="dropdown-item" href="/owners/logout"> ログアウト </a>
+      </div>
+    </div> -->
+</header>
+<article>
+  <section id="top_plans">
+    <%= render partial: "slides" %>
+  </section>
+  <section id="about_owners" class="container mb-5 mt-5">
+   <div class="text-center">
+    <a href="/about"> <img src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/banner/banner-about-owners.jpg" alt="とっておきの、オーナーになろう。OWNERSについて">
+    </a>
+   </div>
+  </section>
+  <section id="plans" class="container mt-3 mb-5">
+    <div class="head">
+      <div class="head_wrap">
+        <p>オーナー募集中のプラン</p>
+      <div class="line"></div>
+      </div>
+    </div>
+      <div class="card-columns">
+        <div class="container">
+          <div class="card">
+            <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
+            <div class="d-flex justify-content-lg-between justify-content-end card_footer">
+              <div class="location d-lg-inline-block">
+               <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
+               <div class="price"> 13,200円 </div>
+             </div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
+            <div class="d-flex justify-content-lg-between justify-content-end card_footer">
+              <div class="location d-lg-inline-block">
+               <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
+               <div class="price"> 13,200円 </div>
+             </div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
+            <div class="d-flex justify-content-lg-between justify-content-end card_footer">
+              <div class="location d-lg-inline-block">
+               <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
+               <div class="price"> 13,200円 </div>
+             </div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
+            <div class="d-flex justify-content-lg-between justify-content-end card_footer">
+              <div class="location d-lg-inline-block">
+               <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
+               <div class="price"> 13,200円 </div>
+             </div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
+            <div class="d-flex justify-content-lg-between justify-content-end card_footer">
+              <div class="location d-lg-inline-block">
+               <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
+               <div class="price"> 13,200円 </div>
+             </div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
+            <div class="d-flex justify-content-lg-between justify-content-end card_footer">
+              <div class="location d-lg-inline-block">
+               <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
+               <div class="price"> 13,200円 </div>
+             </div>
+            </div>
+          </div>
+      </div>
+    </section>
+</article>
+<footer>
+  <div class="container" >
+    <nav class="text-nowrap d-lg-flex d-none pt-5">
+     <ul class="list-unstyled mr-5">
+      <li class="">OWNERSへようこそ</li>
+      <li><a href="#">OWNERSについて</a></li>
+      <li><a href="#">生産者/自治体/メディアの方へ</a></li>
+     </ul>
+    <ul class="list-unstyled mr-5">
+     <li>OWNERSをもっと知る</li>
+      <li><a href="#">ご利用ガイド・よくあるご質問</a></li>
+      <li><a href="#">お問い合わせ</a></li>
+      <li><a href="#">運営会社</a></li>
+    </ul>
+    <ul class="list-unstyled">
+     <li>ご利用にあたって</li>
+     <li><a href="#">利用規約</a></li>
+     <li><a href="#">特定商取引法に関する表示</a></li>
+     <li><a href="#">プライバシーポリシー</a></li>
+    </ul>
+    </nav>
+    <div class="d-flex justify-content-lg-between justify-content-center flex-lg-row-reverse flex-column text-center pt-5">
+    <div class="social mb-4">
+      <a href="https://www.facebook.com/startowners/" target="_blank" id="facebook_link" class="d-inline-block">
+        <i class="facebook"></i>
+      </a>
+      <a href="https://twitter.com/OWNERS_official" target="_blank" class="d-inline-block">
+        <i class="twitter"></i>
+      </a>
+    </div>
+    <div class="logo">
+      <h2 title="OWNERS" class="mb-0"></h2>
+      <p class="copyright text-lg-left text-center pb-4"> © ukka inc. </p>
+     </div>
+   </div>
+  </div>
+</footer>
+
+
+

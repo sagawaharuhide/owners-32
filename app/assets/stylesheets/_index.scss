@@ -1,0 +1,81 @@
+body {
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: auto;
+    font-size: 14px;
+    font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Hiragino Kaku Gothic ProN,"ヒラギノ角ゴ ProN W3",Arial,"メイリオ",Meiryo,sans-serif;
+    color: #2d1d09;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+header{
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255,255,255,.8);
+  a {
+    text-decoration: none;
+     color: #fff;
+    }
+  .index {
+    height: 58px;
+    width: 100%;
+    background-color: rgba(255,255,255,.8);
+    }
+  .sticky{
+    line-height: 58px;
+    }
+}
+
+#plans{
+  .head{
+    text-align: center;
+    margin-bottom: 10px;
+   }
+   .line{
+    width: 58px;
+    height: 4px;
+    background-color: #2d1d09;
+    margin: 0 auto;
+   }
+}
+
+.signup_login {
+    position: relative;
+    -webkit-appearance: none;
+    display: inline-block;
+    text-align: center;
+    transition: all .2s;
+    text-decoration: none;
+    border-color: #427833;
+    border-width: 1px;
+    width: 106px;
+    height: 32px;
+    line-height: 32px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #f1eee8;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    background-color: #2d1d09;
+    color: #fff;
+}
+
+
+
+
+footer {
+  background-image: url('/assets/images/ringo.jpg');
+  background-size: cover;
+  position: relative;
+// color: #fff;
+  background-size: cover;
+  margin-top: auto;
+}
