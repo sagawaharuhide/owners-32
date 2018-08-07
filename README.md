@@ -40,7 +40,6 @@
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
-|detail|text|null: false|
 |plan_id|references|null: false, foreign_key: true|
 
 ### Association
