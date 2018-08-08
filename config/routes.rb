@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'startup/index'
   resources :plans, only: [:index]
   resources :orders, only: [:index]
