@@ -1,0 +1,104 @@
+#cover {
+  .cover_img_wrap {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 520px;
+    text-align: center;
+  }
+  h1.title {
+    text-rendering: auto;
+    text-size-adjust: 100%;
+    font-size: 2.25rem;
+    line-height: 1.67;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.9) 0px 0px 8px;
+    margin: 0px;
+    padding: 0px 3rem;
+  }
+  .cover_desc_wrap {
+    position: relative;
+    height: 90px;
+    padding-top: 14px;
+    background-color: #f1eee8;
+     .container {
+        max-width: 960px;
+     }
+     .avatar {
+      position: absolute;
+      top: -12px;
+      border: 2px solid #fff;
+      display: inline-block;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 50%;
+      width: 82px;
+      height: 82px;
+     }
+     .info-producer {
+      padding-left: 100px;
+     }
+  }
+}
+
+#main_contents {
+  margin-top: 60px;
+  .img-fluid {
+    margin-bottom: 1rem;
+  }
+  h3 {
+    margin-bottom: 1rem;
+    font-size: 23px;
+    letter-spacing: .04rem;
+    line-height: 1.5;
+    font-weight: 700;
+  }
+  .card {
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,.2);
+    background-color: white;
+    .button {
+      display: block;
+      padding: .4rem 1rem;
+      font-size: 14px;
+      font-size: .875rem;
+      border-radius: 4px;
+      background-color: #f1eee8;
+      color: #1b1b1b;
+      cursor: pointer;
+    }
+  }
+}
+
+.plan_detail_list {
+  background-color: #f8f6f3;
+  padding-bottom: 50px;
+  .header {
+    padding: 0.7rem;
+    background-color: #fff;
+    text-align: center;
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+  }
+  .card-body {
+    background-color: #fff;
+    border-top: solid 1px #d7d1c3;
+  }
+  .be-an-owner-btn {
+    display: block;
+    background-color: #427833;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: .6rem .4rem;
+    text-decoration: none;
+  }
+}
+
+.plan-explanation {
+  margin: 1rem 5rem 8rem 5rem;
+}
+

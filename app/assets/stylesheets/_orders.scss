@@ -1,0 +1,246 @@
+.flow {
+  height: 61px;
+  width: 100vw;
+  margin-top: 58px;
+}
+
+.progress_header {
+  height: 61px;
+  background-color: #f1eee8;
+}
+
+.wip {
+  background-color: #3d2811;
+  color: #fff;
+  padding: 0 21px;
+  margin-left: 5px;
+  height: 28px;
+  line-height: 28px;
+}
+
+.backlog {
+  background-color: #fff;
+  color: #9a8e76;
+  padding: 0 21px;
+  margin-left: 5px;
+  height: 28px;
+  line-height: 28px;
+}
+
+.arrow_right_wip{
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 14px solid #3d2811;
+  margin-right: 5px;
+}
+
+.arrow_right_backlog{
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 14px solid #fff;
+  margin-right: 5px;
+}
+
+.purchase_title {
+  background-color: #f1eee8;
+  height: 89px;
+  line-height: 89px;
+  text-align: center;
+  margin: 0;
+  .title {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #3d2811;
+  }
+}
+
+.purchase_guide_message {
+  background-color: #fff;
+  height: 89px;
+  line-height: 89px;
+  margin: 0;
+  .title {
+    width: 100%;
+    max-width: 1000px;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #3d2811;
+  }
+}
+
+.select_course_container {
+  max-width: 1000px;
+  width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  .left {
+    height: 524px;
+    width: 370px;
+    flex: 0 0 auto;
+  }
+}
+
+.center {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.right {
+  height: 501px;
+  width: 600px;
+  padding: 0;
+  flex-basis: 0;
+  flex-grow: 1;
+  #select_course {
+    height: 99px;
+    width: 600px;
+    border: solid 1px #c7bfaf;
+    padding: 0 15px;
+    .thead {
+      height: 43px;
+      width: 598px;
+      height: 43px;
+      line-height: 43px;
+      background-color: #f1eee8;
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: normal;
+      color: #3d2811;
+      .triangle_container {
+        position: relative;
+        height: 43px;
+        max-width: 30px;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+      .course_title {
+        min-width: 350px;
+      }
+    }
+    .tbody {
+      width: 598px;
+      height: 56px;
+      border-top: solid 1px #c7bfaf;
+      .align-items-center {
+        height: 55px;
+        max-width: 30px;
+        .triangle {
+          margin-left: 10px;
+          height: 20px;
+          width: 20px;
+        }
+      }
+      .course_title {
+        height: 50px;
+        min-width: 350px;
+      }
+    }
+  }
+  .selected_course_sum {
+    position: relative;
+    width: 600px;
+    height: 117px;
+    text-align: right;
+    .tax_shipping_fee {
+      position: absolute;
+    top: 48px;
+    right: 34px;
+    width: 100px;
+    height: 13px;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: #7f786b;
+    }
+    .sum_title {
+      position: absolute;
+      top: 69px;
+      right: 203px;
+      width: 36px;
+      height: 18px;
+      font-size: 18px;
+      font-weight: 700;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #3d2811;
+    }
+    .sum {
+      position: absolute;
+      top: 69px;
+      right: 34px;
+      width: 120px;
+      height: 18px;
+      font-size: 18px;
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: right;
+      color: #3d2811;
+    }
+    hr {
+      position: absolute;
+      top: 103px;
+      right: 0;
+      width: 253px;
+      height: 1px;
+    }
+  }
+  .submit_box {
+    width: 600px;
+    height: 116px;
+    padding: 0 15px;
+    .text-right {
+      height: 116px;
+      input {
+        width: 256px;
+        height: 48px;
+        margin-top: 34px;
+        margin-bottom: 34px;
+        position: relative;
+        -webkit-appearance: none;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #427833;
+        border-radius: 4px;
+        background-color: #427833;
+        display: inline-block;
+        text-align: center;
+        line-height: 30px;
+        transition: all .2s;
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+        font-style: normal;
+        font-stretch: normal;
+        letter-spacing: normal;
+      }
+    }
+  }
+}
