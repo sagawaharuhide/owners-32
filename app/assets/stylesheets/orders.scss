@@ -27,6 +27,15 @@
   line-height: 28px;
 }
 
+.done {
+  background-color: #dbd4c5;
+  color: #9a8e76;
+  padding: 0 21px;
+  margin-left: 5px;
+  height: 28px;
+  line-height: 28px;
+}
+
 .arrow_right_wip{
   width: 0;
   height: 0;
@@ -42,6 +51,15 @@
   border-top: 14px solid transparent;
   border-bottom: 14px solid transparent;
   border-left: 14px solid #fff;
+  margin-right: 5px;
+}
+
+.arrow_right_done{
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 14px solid #dbd4c5;
   margin-right: 5px;
 }
 
@@ -243,4 +261,166 @@
       }
     }
   }
+}
+
+// orders住所入力画面ーーーーーーーーーーーーーーーーーー
+
+.purchase_main_container {
+  max-width: 1000px;
+  height: 495px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.address_table {
+  height: 284px;
+  width: 999px;
+  border: solid 1px #c7bfaf;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 100%;
+  tr {
+    height: 46px;
+    th {
+      font-size: 14px;
+      color: #3d2811;
+      line-height: 43px;
+      background-color: #f1eee8;
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      border: solid 1px #c7bfaf;
+      min-height: 43px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .course_info {
+      width: 203px;
+    }
+  }
+    td {
+      font-size: 14px;
+      color: #3d2811;
+      padding: 20px;
+      background-color: #fff;
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      border: solid 1px #c7bfaf;
+      min-height: 43px;
+      h3 {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.25;
+        color: #3d2811;
+      }
+      .price {
+        margin-bottom: 30px;
+        font-size: 14px;
+        line-height: 1.43;
+        color: #3d2811;
+      }
+    }
+        .form-check-label {
+          background-color: #f5f2ec;
+          font-size: 14px;
+          font-weight: 400;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.36;
+          letter-spacing: normal;
+          color: #3d2811;
+        }
+        .address_button {
+          display: block;
+          text-decoration: none;
+          text-align: center;
+          width: 189px;
+          height: 32px;
+          line-height: 32px;
+          border-radius: 4px;
+          background-color: #fff;
+          border: solid 1px #2d1d09;
+          margin-top: 30px;
+          font-size: 13px;
+          font-weight: 600;
+          font-style: normal;
+          font-stretch: normal;
+          letter-spacing: normal;
+          color: #38280a;
+        }
+}
+
+.select_address_type {
+  text-align: right;
+  .separated {
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #3d2811;
+  }
+}
+
+button.white {
+  width: 270px;
+  height: 48px;
+  line-height: 48px;
+  margin-left: 22px;
+  position: relative;
+  -webkit-appearance: none;
+  border-style: solid;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+  transition: all .2s;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  background-color: #fff;
+  color: #427833;
+  border-color: #427833;
+  border-width: 1px;
+  // .arrow_left_green {
+  //   left: 11px;
+  //   position: absolute;
+  //   top: 50%;
+  //   color: #427833;
+  //   width: 7px;
+  //   height: 12px;
+  //   background-image: url(app/assets/images/arrow-left.svg)
+  // }
+}
+
+.submit_button {
+  width: 270px;
+  height: 48px;
+  line-height: 48px;
+  margin-left: 22px;
+  position: relative;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #427833;
+  border-radius: 4px;
+  background-color: #427833;
+  display: inline-block;
+  text-align: center;
+  transition: all .2s;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
 }

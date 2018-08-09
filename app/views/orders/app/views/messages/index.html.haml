@@ -1,0 +1,23 @@
+.wrapper
+  = render 'sidebar'
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          = @group.name
+        %ul.left-header__members
+          = render "member"
+      .right-header
+        = link_to edit_group_path(params[:group_id]), class: "right-header__button" do
+          Edit
+    .messages
+      = render @messages
+    #scroll
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :text, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
