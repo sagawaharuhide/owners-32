@@ -1,1 +1,106 @@
-<h1>hello world</h1>
+<div class="d-none d-lg-block flow">
+  <div class="d-flex justify-content-center align-items-center w-100 progress_header">
+    <div class="d-flex justify-content-start progress_arrow">
+      <div class="wip"> 1. コース選択 </div>
+      <div class="arrow_right_wip"></div>
+      <div class="backlog"> 2. お届け先の指定 </div>
+      <div class="arrow_right_backlog"></div>
+      <div class="backlog"> 3. 申し込み内容・お届け先の確認 </div>
+      <div class="arrow_right_backlog"></div>
+      <div class="backlog"> 4. お支払い </div>
+      <div class="arrow_right_backlog"></div>
+      <div class="backlog"> 5. 完了 </div>
+      <div class="arrow_right_backlog"></div>
+    </div>
+  </div>
+</div>
+
+<div class="purchase_title d-none d-lg-block">
+  <div class="title mx-auto text-nowrap"> お申し込みプラン・コースの確認 </div>
+</div>
+
+<div class="purchase_guide_message d-none d-lg-block">
+  <div class="title mx-auto text-center"> 各コースの口数を設定し、ご確認のうえ先におすすみください。 </div>
+</div>
+<div class="container-fluid select_course_container">
+  <div class="row justify-content-md-center center">
+    <div class="col-md-auto d-none d-lg-block left">
+      <div class="card">
+        <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
+        <div class="d-flex justify-content-lg-between justify-content-end card_footer">
+          <div class="location d-lg-inline-block">
+           <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
+           <div class="price"> 13,200円 </div>
+         </div>
+        </div>
+      </div>
+    </div>
+    <div class="col right m-0 p-0">
+      <div class="plan_sp d-block d-lg-none d-xl-none">
+        <ul class="list-unstyled mb-0">
+          <li class="media">
+            <img class="mr-2" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/149/image_square/20180729160049.jpg" alt="">
+            <div class="media-body">
+              <h5 class="mt-2 mb-0">琥珀色の感動を日本中に。半世紀前の製法を今も貫く菜たね油「まごどさ」</h5> </div>
+            </li>
+          </ul>
+        </div>
+        <div id="select_course" class="container-fluid">
+          <div class="d-none d-lg-block">
+            <div class="row thead">
+              <div class="col triangle_container"></div>
+              <div class="col course_title">コース名/価格</div>
+              <div class="col text-center">口数</div>
+              <div class="col text-right">小計</div>
+            </div>
+          </div>
+          <div id="accordion_heading_149" class="row tbody">
+            <div class="col p-0 triangle_container d-flex align-items-center" onclick="toggleCollapse('149')">
+              <div id="triangle_149" class="text-center triangle">▶</div>
+            </div>
+            <div class="col pt-1 pb-1 text-left align-self-center course_title" onclick="toggleCollapse('149')">
+              <strong class="title"> 「菜種油まごどさ2本」コース </strong>
+              <p class="mb-0 price"> 2,600 円 / 1口 </p>
+            </div>
+            <div class="col text-center align-self-center course_count_container">
+              <img id="count_button_decrement_149" src="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-minus-disabled.svg" data-image-enabled="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-minus.svg" data-image-disabled="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-minus-disabled.svg" onclick="decrement('149')" class="count_button">
+              <span id="count_149" class="course_count"> 0 </span>
+              <img src="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-plus.svg" onclick="increment('149')" class="count_button">
+              <input type="hidden" id="hidden_count_149" class="order-counter" value="0">
+            </div>
+            <div class="col text-center align-self-center d-none d-lg-block" id="subtotal_149" data-price="2600"> 0 円 </div>
+          </div>
+          <div class="row">
+            <div id="accordion_body_149" class="collapse col align-self-center course_detail" aria-labelledby="accordion_heading_149" data-parent="#select_course">
+              <div class="container select_course_container">
+                <div class="row justify-content-md-center">
+                  <div class="col-md-auto d-none d-lg-block left">
+                    <img src="https://d1xgtamobon6ik.cloudfront.net/tmp/3LjvyWIW2sXWBRCEIrkkWA" alt="">
+                  </div>
+                  <div class="col right">
+                    <h3>お届け概要</h3>
+                    <p>商品：菜たね油「まごどさ」2本(450ml/本) <br>時期：10月上旬から順次お届けします。<br><br>※お届け日時は指定できません。発送時期は事前にご案内いたします。</p> <h3>その他注意点</h3> <p>▼提供内容<br><br>商品：<br>菜たね油「まごどさ」2本(450ml/本) <br><br>時期：<br>10月上旬から順次お届けします。<br><br>※オーナーさま向けの“搾りたて”をお届けします。<br><br>▼募集定員<br>100人<br><br>▼募集期間：　<br>2018年6月21日（木）〜2018年9月20日（木）<br><br>▼契約期間：<br>登録後から、最終商品お届けの翌月末まで<br><br>▼登録金額：<br>2,600円（消費税・送料1回込）</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="selected_course_sum d-none d-lg-block left">
+          <div class="tax_shipping_fee">(税・送料込み)</div>
+          <div class="sum_title">合計</div>
+          <div class="sum" id="sum">7,400 円</div>
+          <hr>
+        </div>
+        <div class="container d-none d-lg-block left submit_box">
+          <div class="row">
+            <div class="col text-right">
+              <input type="submit" value="お届け先指定へ">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
