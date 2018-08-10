@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  root 'plans#index'
   get 'orders/confirm'
   resources :plans, only: [:index, :show]
   resources :orders, only: [:index, :show]
