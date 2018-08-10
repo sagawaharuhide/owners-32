@@ -21,7 +21,7 @@ class Scraping
     producer = page.at('.organization_name').inner_text
     area = page.at('.location_name').inner_text
     dead_line = page.at('.date').inner_text
-    plan = Plan.new(producer: producer, area: area, dead_line: dead_line)
+    plan = Plan.where(producer: producer, area: area, dead_line: dead_line).first_or_initialize
     plan.save
   end
 
