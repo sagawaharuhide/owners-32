@@ -1,29 +1,55 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="container signup_login_content text-center">
+    <div class="text-center mb-3">
+      <div class="container-fluid">
+       <div class="row">
+         <div class="col"></div>
+       </div>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+      <div class="card-header">
+        オーナープランの申し込みには会員登録が必要です
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Facebookで登録する</li>
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.text_field :last_name, autocomplete: "last_name", placeholder:"性" %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.text_field :first_name, autocomplete: "first_name", placeholder:"名前" %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.email_field :email, autocomplete: "email", placeholder:"メールアドレス" %>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="field">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", placeholder:"パスワード"%>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="actions">
+            <%= f.submit "Sign up" %>
+          </div>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+    <div class="form-login-group d-none d-lg-block">
+      <h5>すでに会員の方はこちら</h5>
+      <a href="/owners/login" class="button">
+        <%= render "devise/shared/links" %>
+      </a>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
