@@ -29,7 +29,7 @@
 |------|----|-------|
 |producer|string|null: false|
 |area|string|null: false|
-|dead_line|date|null: false|
+|dead_line|string|null: false|
 
 ### Association
 - has_many : courses
