@@ -16,7 +16,7 @@
         <li class="list-group-item">Facebookで登録する</li>
         <li class="list-group-item">
           <div class="field">
-            <%= f.text_field :last_name, autocomplete: "last_name", placeholder:"性" %>
+            <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder:"性" %>
           </div>
         </li>
         <li class="list-group-item">
@@ -36,6 +36,10 @@
             <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
             <%= f.password_field :password, autocomplete: "off", placeholder:"パスワード"%>
+            <div class="field">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off", placeholder:"パスワードの確認"%>
+            </div>
           </div>
         </li>
         <li class="list-group-item">
