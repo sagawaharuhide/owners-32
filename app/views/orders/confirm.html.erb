@@ -1,0 +1,122 @@
+<div class="d-none d-lg-block flow">
+  <div class="d-flex justify-content-center align-items-center w-100 progress_header">
+    <div class="d-flex justify-content-start progress_arrow">
+      <div class="done"> 1. コース選択 </div>
+      <div class="arrow_right_done"></div>
+      <div class="done"> 2. お届け先の指定 </div>
+      <div class="arrow_right_done"></div>
+      <div class="wip"> 3. 申し込み内容・お届け先の確認 </div>
+      <div class="arrow_right_wip"></div>
+      <div class="backlog"> 4. お支払い </div>
+      <div class="arrow_right_backlog"></div>
+      <div class="backlog"> 5. 完了 </div>
+      <div class="arrow_right_backlog"></div>
+    </div>
+  </div>
+</div>
+
+<div class="purchase_title d-none d-lg-block">
+  <div class="title mx-auto text-nowrap"> お申し込み内容・お届け先の確認 </div>
+</div>
+
+<div class="purchase_guide_message d-none d-lg-block">
+  <div class="title mx-auto text-center"> お申込内容とお届け先はこちらでお間違いないでしょうか？よろしければお支払い設定へお進みください。 </div>
+</div>
+
+<div class="container-fluid select_course_container">
+  <div class="row justify-content-md-center center">
+    <div class="col-md-auto d-none d-lg-block left">
+      <div class="card">
+        <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
+        <div class="d-flex justify-content-lg-between justify-content-end card_footer">
+          <div class="location d-lg-inline-block">
+           <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
+           <div class="price"> 13,200円 </div>
+         </div>
+        </div>
+      </div>
+    </div>
+    <div class="col right m-0 p-0">
+      <table class="address_table">
+        <tbody>
+          <tr>
+            <th class="course_info hidden_on_sp"> コース名/価格/口数 </th>
+            <th class="hidden_on_sp"> お届け先 </th>
+          </tr>
+          <tr>
+            <td class="course_info hidden_on_sp align-top">
+              <h3>ラオスの森コーヒー定期便コース</h3>
+              <div class="d-flex justify-content-between price">
+                <div> 10,000円 </div>
+                <div> 5口 </div>
+              </div>
+            </td>
+            <td class="align-top address_info">
+              <div class="d-block d-lg-none">
+                <h3>ラオスの森コーヒー定期便コース</h3>
+                <div class="d-flex justify-content-between price">
+                  <div> 10,000円 </div>
+                  <div> 5口 </div>
+                </div>
+                <hr>
+              </div>
+              <div class="p-0 m-0 address_container">
+                <span>あ 様</span>
+                <p>〒１１１-１１１１ 北海道１<br>１</p>
+                <a class="edit_button" href="/orders/input/167?separated=0">
+                  <img src="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/pen.svg" alt="お届け先の変更">
+                </a>
+              </div>
+            </td>
+          </tr>
+          <tr class="d-block d-lg-none separator">
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="selected_course_sum d-none d-lg-block left">
+        <div class="tax_shipping_fee">(税・送料込み)</div>
+        <div class="sum_title">合計</div>
+        <div class="sum" id="sum">7,400 円</div>
+        <hr>
+      </div>
+      <div class="terms single-column">
+        <h2 class="center center_text">利用規約</h2>
+        <h3>第1章 総則</h3>
+        <div class="term-box">
+          <h4>第1条【定義】</h4>
+          <dl class="rule">
+            <dt>1.本規約</dt>
+            <dd>OWNERS　利用規約</dd>
+            <dt>2.当社</dt>
+            <dd>株式会社ukka　株式会社エル・エス・ピー</dd>
+            <dt>3.本サービス</dt>
+            <dd>オーナー制度プラットフォームサービス　「OWNERS（オーナーズ）」</dd>
+            <dt>4.会員</dt>
+            <dd>本規約に同意の上、本サイトに会員登録をした個人および事業者の両方</dd>
+            <dt>5.パートナー</dt>
+            <dd>本サイトでオーナー制度商品を提案し、それを提供する事業者</dd>
+            <dt>6.オーナー</dt>
+            <dd>本サイトでオーナー制度商品に登録し、そのサービスを受ける者</dd>
+            <dt>7.登録商品</dt>
+            <dd>本サイトでパートナーが提供するオーナー制度商品および追加販売商品</dd>
+            <dt>8.取引</dt>
+            <dd>利用者が、パートナーが提案するオーナー制度商品への登録ならびに、追加商品購入後をその商品受け取るまでの一連の行為。</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row d-none d-lg-block">
+    <div class="col p-0 d-flex justify-content-end">
+      <button type="button" onclick="location.href='/orders/select_course/167'" class="white">
+        <i class="arrow_left_green"></i> 戻る
+      </button>
+      <button type="submit" class="submit_button" id="submit_button_pc">
+        <i class="arrow_right_white"></i> 利用規約に同意して進む
+      </button>
+    </div>
+  </div>
+</div>
