@@ -23,8 +23,9 @@ require 'mechanize'
     area = page.at('.location_name').inner_text
     dead_line = page.at('.date').inner_text
     img_url = page.at('.cover_img_wrap').get_attribute('style').match(/https?:\/\/[\S]+.jpg/).to_s
+    avatar = page.at('.container .d-flex div').get_attribute('style').match(/https?:\/\/[\S]+.jpg/).to_s
     title = page.at('.cover_img_wrap h1').inner_text
-    plan = Plan.where(producer: producer, area: area, dead_line: dead_line, img_url: img_url, title: title).first_or_initialize
+    plan = Plan.where(producer: producer, area: area, dead_line: dead_line, img_url: img_url, title: title, avatar: avatar).first_or_initialize
     plan.save
    end
 
