@@ -15,75 +15,27 @@
       <div class="line"></div>
       </div>
     </div>
-      <div class="card-columns">
-        <div class="container">
-          <div class="card">
-            <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
+    <div class="plans_pc d-flex justify-content-center flex-wrap">
+      <% @plans.each do |plan| %>
+        <div class="plan_card_medium">
+          <%= link_to "","/plans/#{plan.id}" %>
+          <div class="card float-card">
+            <img class="card-img-top" src="<%= plan.img_url %>" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
-            <div class="d-flex justify-content-lg-between justify-content-end card_footer">
-              <div class="location d-lg-inline-block">
-               <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
-               <div class="price"> 13,200円 </div>
-             </div>
+              <div class="avatar" style="background-image:url(<%= plan.avatar %>);">
+              </div>
+              <h5 class="card_title"><%= plan.title %></h5>
+              <div class="d-flex justify-content-lg-between justify-content-end card_footer">
+                <div class="location d-lg-inline-block">
+                  <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> ###
+                </div>
+                <div class="price"> ###円 </div>
+              </div>
             </div>
           </div>
-          <div class="card">
-            <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
-            <div class="d-flex justify-content-lg-between justify-content-end card_footer">
-              <div class="location d-lg-inline-block">
-               <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
-               <div class="price"> 13,200円 </div>
-             </div>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
-            <div class="d-flex justify-content-lg-between justify-content-end card_footer">
-              <div class="location d-lg-inline-block">
-               <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
-               <div class="price"> 13,200円 </div>
-             </div>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
-            <div class="d-flex justify-content-lg-between justify-content-end card_footer">
-              <div class="location d-lg-inline-block">
-               <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
-               <div class="price"> 13,200円 </div>
-             </div>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
-            <div class="d-flex justify-content-lg-between justify-content-end card_footer">
-              <div class="location d-lg-inline-block">
-               <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
-               <div class="price"> 13,200円 </div>
-             </div>
-            </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
-            <div class="d-flex justify-content-lg-between justify-content-end card_footer">
-              <div class="location d-lg-inline-block">
-               <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
-               <div class="price"> 13,200円 </div>
-             </div>
-            </div>
-          </div>
-      </div>
-    </section>
+        </div>
+      <% end %>
+    </div>
+  </section>
 </article>
 
