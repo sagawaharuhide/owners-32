@@ -26,17 +26,44 @@ header{
     width: 100%;
     background-color: rgba(255,255,255,.8);
     }
-  .sticky{
+  .sticky {
     line-height: 58px;
     }
+  .authenticated_header_menu {
+      button {
+        background: 0 0;
+        border: 0;
+        font-size: 14px;
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        color: #333;
+        outline: 0;
+      }
+      button img {
+        width: 26px;
+        height: 26px;
+        border-radius: 13px;
+        margin-left: 10px;
+        margin-right: 6px;
+      }
+      .dropdown-menu {
+        padding: 0;
+
+      }
+      .dropdown-item {
+        font-size: 14px;
+        line-height: 41px;
+      }
+  }
 }
 
-#plans{
-  .head{
+#plans {
+  .head {
     text-align: center;
     margin-bottom: 10px;
    }
-   .line{
+   .line {
     width: 58px;
     height: 4px;
     background-color: #2d1d09;
@@ -72,7 +99,6 @@ footer {
   background-image: url('/assets/images/ringo.jpg');
   background-size: cover;
   position: relative;
-// color: #fff;
   background-size: cover;
   margin-top: auto;
 }
