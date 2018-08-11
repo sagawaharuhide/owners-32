@@ -20,23 +20,26 @@
         <div class="ml-3">
           <a href="#" class="guide"> ご利用ガイド </a>
         </div>
-        <div class="ml-3">
-          <a href="/owners/signup" class="signup_login"> 会員登録 </a>
-        </div>
-        <div class="ml-3 mr-2">
-          <a href="/owners/login" class="signup_login"> ログイン </a>
-        </div>
-    <!-- 会員登録機能が出来次第使用
-     --><!--     <div class="dropdown authenticated_header_menu">
-          <button class="dropdown-toggle dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src=""> OwnerName
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="/owners/mypage"> マイページ </a>
-            <hr>
-            <a class="dropdown-item" href="/owners/logout"> ログアウト </a>
+        <% if user_signed_in? %>
+          <div class="dropdown authenticated_header_menu mr-3">
+            <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <img src="https://d1xgtamobon6ik.cloudfront.net/profile_image_default.png">
+              <%= current_user.last_name%><%= current_user.first_name%>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to "マイページ", user_path(current_user), class: "dropdown-item" %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
           </div>
-        </div> -->
+        <% else %>
+          <div class="ml-3">
+            <a href="/users/sign_up" class="signup_login"> 会員登録 </a>
+          </div>
+          <div class="ml-3 mr-2">
+            <a href="/users/sign_in" class="signup_login"> ログイン </a>
+          </div>
+         <% end %>
+      </nav>
     </header>
 
     <%= yield %>
