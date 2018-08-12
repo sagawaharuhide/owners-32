@@ -30,6 +30,9 @@
 |producer|string|null: false|
 |area|string|null: false|
 |dead_line|string|null: false|
+|img_url|text||
+|title|text||
+|avatar|text||
 
 ### Association
 - has_many : courses
