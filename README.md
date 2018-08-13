@@ -47,29 +47,17 @@
 
 ### Association
 - belongs_to : plan
-- has_many : order_details
-- has_many : orders, through: :order_details
+- has_many : orders
 
 ## ordersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
+|quantity|integer|null: false|
 |address_id|references|null: false, foreign_key: true|
+|course_id|references|null: false, foreign_key: true|
 
 ### Association
-- has_many : order_details
-- has_many : courses, through: :order_details
+- belongs_to : course
 - delegate_to : user, to: :address
 - belongs_to : address
-
-## order_detailsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|quantity|integer|null: false|
-|course_id|references|null: false, foreign_key: true|
-|order_id|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to : order
-- belongs_to : course

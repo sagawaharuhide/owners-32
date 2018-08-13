@@ -1,7 +1,6 @@
 class Order < ApplicationRecord
 
-  has_many :order_details
-  has_many :courses, through: :order_details
+  belongs_to :course
   delegate :user, to: :address
   belongs_to :address
 
