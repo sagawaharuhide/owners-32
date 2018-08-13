@@ -4,8 +4,8 @@
       <div class="mypage-detail-menu">
         <img src="https://d1xgtamobon6ik.cloudfront.net/profile_image_default.png">
         <nav>
-          <p class="text-center"> おだ こうじ </p>
-          <a href="/users/show"><i></i>マイページ</a>
+          <p class="text-center"><%= current_user.last_name%> <%= current_user.first_name%></p>
+          <%= link_to "マイページ", user_path(current_user) %>
           <a href="#"><i></i>アドレス帳</a>
           <a href="#"><i></i>アカウント設定</a>
           <a href="#"><i></i>購入履歴</a>
