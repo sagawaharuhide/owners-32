@@ -6,7 +6,7 @@
 
 ### Association
 - has_many : addresses
-- has_many : orders through: :addresses
+- has_many : orders, through: :addresses
 
 ## addressesテーブル
 
