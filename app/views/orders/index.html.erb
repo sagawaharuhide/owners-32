@@ -26,13 +26,13 @@
   <div class="row justify-content-md-center center">
     <div class="col-md-auto d-none d-lg-block left">
       <div class="card">
-        <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_square/20180729130302.jpg" alt="Card image cap">
+        <img class="card-img-top" src="<%= @plan.img_url %>" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h5>
+          <h5 class="card-title">"<%= @plan.title %>"</h5>
         <div class="d-flex justify-content-lg-between justify-content-end card_footer">
           <div class="location d-lg-inline-block">
-           <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> 長野県須坂市小島町 </div>
-           <div class="price"> 13,200円 </div>
+           <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"><%= @plan.area %></div>
+           <div class="price"> ###円 </div>
          </div>
         </div>
       </div>
@@ -81,7 +81,7 @@
                   </div>
                   <div class="col right">
                     <h3>お届け概要</h3>
-                    <p>商品：菜たね油「まごどさ」2本(450ml/本) <br>時期：10月上旬から順次お届けします。<br><br>※お届け日時は指定できません。発送時期は事前にご案内いたします。</p> <h3>その他注意点</h3> <p>▼提供内容<br><br>商品：<br>菜たね油「まごどさ」2本(450ml/本) <br><br>時期：<br>10月上旬から順次お届けします。<br><br>※オーナーさま向けの“搾りたて”をお届けします。<br><br>▼募集定員<br>100人<br><br>▼募集期間：　<br>2018年6月21日（木）〜2018年9月20日（木）<br><br>▼契約期間：<br>登録後から、最終商品お届けの翌月末まで<br><br>▼登録金額：<br>2,600円（消費税・送料1回込）</p>
+                    <p>商品：菜たね油「まごどさ」2本(450ml/本) <br>時期：10月上旬から順次お届けします。<br><br>※お届け日時は指定できません。発送時期は事前にご案内いたします。</p> <h3>その他注意点</h3> <p>▼提供内容<br><br>商品：<br>菜たね油「まごどさ」2本(450ml/本) <br><br>時期：<br>10月上旬から順次お届けします。<br><br>※オーナーさま向けの“搾りたて”をお届けします。<br><br>▼募集定員<br>100人<br><br>▼募集期間：<br>2018年6月21日（木）〜2018年9月20日（木）<br><br>▼契約期間：<br>登録後から、最終商品お届けの翌月末まで<br><br>▼登録金額：<br>2,600円（消費税・送料1回込）</p>
                   </div>
                 </div>
               </div>
