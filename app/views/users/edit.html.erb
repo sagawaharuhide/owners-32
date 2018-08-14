@@ -1,0 +1,86 @@
+<div class="mypage_container">
+  <div class="mx-auto mypage_main_pc">
+    <div class="d-none d-lg-block mypage_left_menu">
+      <div class="mypage-detail-menu">
+        <img src="https://d1xgtamobon6ik.cloudfront.net/profile_image_default.png">
+        <nav>
+          <p class="text-center"><%= current_user.last_name %> <%= current_user.first_name %></p>
+          <%= link_to "マイページ", user_path(current_user) %>
+          <a href="#"><i></i>アドレス帳</a>
+          <%= link_to "アカウント設定", edit_user_path(current_user) %>
+          <a href="#"><i></i>購入履歴</a>
+        </nav>
+      </div>
+      <div class="text-center contact-to-owners">
+        <h3 class="text-center">運営に意見を送る</h3>
+        <form class="owners_form">
+          <input type="hidden" id="contact_csrf_token" value="Ijk1YTEyOTgwMGUwZDQ4N2Q1ZTMyOWFhODE0ZTdlNTc2ZTI5MGMwNWEi.Dk7y-w.2_1tDAt0cz3dQAj5oDkmxbPeIbU">
+          <textarea id="contact_message_PC" placeholder="ご意見・ご要望などございましたらこちらからお寄せ下さい
+          なお、返信を要する内容については、問い合わせフォームよりお願い致します。" class="mx-auto"></textarea>
+          <input type="hidden" id="contact_user_id" value="lZGkG91T0p7glshfrawic">
+          <input type="hidden" id="contact_producer_id" value="">
+          <input name="confirm" style="width:130px;" onclick="return create_inquiry(this, 'PC')" type="submit" value="送信">
+        </form>
+      </div>
+    </div>
+    <div class="mypage_main_contents">
+      <h2>アカウント設定変更</h2>
+      <div class="user-edit-form-container">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col"> </div>
+        </div>
+        </div>
+        <form class="h-adr" method="POST" id="form">
+          <div class="form-group">
+            <label for="family_name">
+              姓
+              <label class="user-edit-required">※</label>
+            </label>
+            <input type="text" name="family_name" class="form-control" id="family_name" placeholder="姓" value= <%= current_user.last_name %> >
+            <div class="invalid-feedback"> 姓を入力してください。 </div>
+          </div>
+          <div class="form-group">
+            <label for="given_name">
+              名
+              <label class="user-edit-required">※</label>
+            </label>
+            <input type="text" name="given_name" class="form-control" id="given_name" placeholder="名" value= <%= current_user.first_name %> >
+            <div class="invalid-feedback"> 名前を入力してください。 </div>
+          </div>
+          <div class="form-group">
+            <label for="email">
+              メールアドレス
+              <label class="user-edit-required">※</label>
+            </label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="メールアドレス" value= <%= current_user.email %> >
+            <div class="invalid-feedback"> メールアドレスを入力してください。 </div>
+          </div>
+          <div class="form-group">
+            <label for="email">メール受信</label><br>
+            <input type="checkbox" id="email_magazine_subscribed" name="email_magazine_subscribed" value="1" checked="">
+            <label for="email_magazine_subscribed"> 受信する </label><br>
+             ※ 商品発送案内の通知は、メール受信が必要になります
+          </div>
+          <div class="form-group">
+            <label for="password">
+              パスワード
+              <label class="user-edit-required">※</label>
+            </label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="パスワード" value=>
+            <div class="invalid-feedback"> パスワードを入力して下さい。 </div>
+            <small id="password" class="form-text text-muted"> パスワードは半角英数記号の7文字以上でご入力下さい。 </small>
+          </div>
+          <div class="form-group">
+            <label for="profile_image">プロフィール画像</label>
+            <input type="file" id="profile_image" name="profile_image" accept="image/jpeg" key="profile/lZGkG91T0p7glshfrawic/20180813161723.jpg" digest="be0f9437f6a38cd67ccaedc5d047cfc6">
+            <div id="profile_image_preview"></div>
+          </div>
+          <div>
+            <button type="submit" class="user-update-button submit" id="submit_button">更新</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
