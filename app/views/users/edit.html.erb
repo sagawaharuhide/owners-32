@@ -31,21 +31,21 @@
             <div class="col"> </div>
         </div>
         </div>
-        <form class="h-adr" method="POST" id="form">
+        <%= form_tag("/users/#{@user.id}", method: :patch ) do %>
           <div class="form-group">
-            <label for="family_name">
+            <label for="last_name">
               姓
               <label class="user-edit-required">※</label>
             </label>
-            <input type="text" name="family_name" class="form-control" id="family_name" placeholder="姓" value= <%= current_user.last_name %> >
+            <input type="text" name="last_name" class="form-control" id="last_name" placeholder="姓" value= <%= current_user.last_name %> >
             <div class="invalid-feedback"> 姓を入力してください。 </div>
           </div>
           <div class="form-group">
-            <label for="given_name">
+            <label for="first_name">
               名
               <label class="user-edit-required">※</label>
             </label>
-            <input type="text" name="given_name" class="form-control" id="given_name" placeholder="名" value= <%= current_user.first_name %> >
+            <input type="text" name="first_name" class="form-control" id="first_name" placeholder="名" value= <%= current_user.first_name %> >
             <div class="invalid-feedback"> 名前を入力してください。 </div>
           </div>
           <div class="form-group">
@@ -79,7 +79,7 @@
           <div>
             <button type="submit" class="user-update-button submit" id="submit_button">更新</button>
           </div>
-        </form>
+        <% end %>
       </div>
     </div>
   </div>
