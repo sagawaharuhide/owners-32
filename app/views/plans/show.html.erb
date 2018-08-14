@@ -1,27 +1,27 @@
 <article>
   <section id="cover">
-    <div class="cover_img_wrap d-flex justify-content-center align-items-center" style="background-image: url(https://d1xgtamobon6ik.cloudfront.net/images/plan/135/image_main/20180729130302.jpg);">
-      <h1 class="title container">大粒・皮ごと・種なし、信州育ちの甘みはじける贅沢３種のぶどう</h1>
+    <div class="cover_img_wrap d-flex justify-content-center align-items-center" style="background-image: url(<%= @plan.img_url %>);">
+      <h1 class="title container"><%= @plan.title %></h1>
     </div>
     <div class="cover_desc_wrap">
       <div class="container">
         <div class="d-flex align-items-center">
-          <div class="avatar_82 avatar" style="background-image: url(https://d1xgtamobon6ik.cloudfront.net/producer/25/profile_image/20180729130423.jpg);">
+          <div class="avatar_82 avatar" style="background-image: url(<%= @plan.avatar %>);">
           </div>
           <div class="mr-auto info-producer">
-            <div class="organization_name"> 信州須坂 太田農園 </div>
+            <div class="organization_name"><%= @plan.producer %></div>
             <div class="location d-flex align-items-center">
               <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon">
-              <h7 class="location_name"> 長野県須坂市小島町 </h7>
+              <h7 class="location_name"><%= @plan.area %></h7>
             </div>
           </div>
           <div class="price_wrap pr-5">
             <div class="price_title">登録価格</div>
-            <div class="price"> 13,200 円〜 (税込・送料込み) </div>
+            <div class="price"> ### 円〜 (税込・送料込み) </div>
           </div>
           <div class="date_wrap">
             <div class="date_title">募集締切</div>
-            <div class="date">08月20日</div>
+            <div class="date"><%= @plan.dead_line %></div>
           </div>
         </div>
       </div>
@@ -38,24 +38,15 @@
         </div>
         <div class="col-4 side">
           <div class="sidebar">
+            <% @courses.each do |course| %>
             <div class="plan_summaly_list mb-5">
               <div class="card border-0">
-                <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/tmp/2x0apuT87MDWj22KOZknOd" alt="Card image cap">
+                <img class="card-img-top" src="<%= course.plan.img_url %>" alt="Card image cap">
                  <div class="card-img-overlay">
-                    <p class="card-text">「太田農園の信州ぶどう3種」コース</p>
+                    <p class="card-text"><%= course.name %></p>
                   </div>
                 <div class="card-body">
-                  <p class="card-text">
-                    第1弾<br/>
-                    ・商品: ナガノパープル 1kg以上 (2～3房)<br/>
-                    ・時期: 9月上旬にお届け<br/>
-                    第2弾<br/>
-                    ・商品: シャインマスカット1kg以上 (2～3房)<br/>
-                    ・時期: 9月下旬にお届け<br/>
-                    第3弾<br/>
-                    ・商品: クイーンニーナ1kg以上 (2～3房)<br/>
-                    ・時期: 10月上旬にお届け<br/><br/>
-                    ※お届け時間帯のみご指定可能です。発送時期およびご指定方法については事前にご案内いたします。
+                  <p class="card-text"><%= course.detail %>
                   </p>
                   <div class="text-center mt-2">
                     <span class="button d-block" onclick="location.href='#course_list'"> コース詳細 </span>
@@ -63,56 +54,51 @@
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </section>
-<section id="course_list" class="plan_detail_list">
-  <div class="container pt-5">
-    <h5 class="text-center"> プラン詳細 </h5>
-    <div class="row d-flex justify-content-center">
-      <div class="col-4 mb-4">
-        <div class="card border-0">
-          <img class="card-img-top" src="https://d1xgtamobon6ik.cloudfront.net/tmp/2x0apuT87MDWj22KOZknOd" alt="Card image cap">
+  <section id="course_list" class="plan_detail_list">
+    <div class="container pt-5">
+      <h5 class="text-center"> プラン詳細 </h5>
+      <div class="row d-flex justify-content-center">
+        <% @courses.each do |course| %>
+        <div class="col-4 mb-4">
+          <div class="card border-0">
+            <img class="card-img-top" src="<%= course.plan.img_url %>" alt="Card image cap">
+            </div>
+            <div class="header">
+              <h5 class="card-title"><%= course.name %></h5>
+              <div class="price mb-3"> <%= course.price %> 円（消費税・送料込み）</div>
+              <%= link_to plan_orders_path(course.plan), class:"text-center be-an-owner-btn" do %>
+                このコースでオーナーになる
+              <% end %>
+            </div>
+            <div class="card-body desc">
+              <p><strong>コース内容</strong></p>
+              <p><%= course.detail %><p>
+            </div>
           </div>
-          <div class="header">
-            <h5 class="card-title">「太田農園の信州ぶどう3種」コース</h5>
-            <div class="price mb-3"> 13,200 円（消費税・送料込み）</div>
-            <a href="/orders/select_course/#" class="text-center be-an-owner-btn"> このコースでオーナーになる </a>
-          </div>
-          <div class="card-body desc">
-            <p><strong>コース内容</strong><p>
-            <p>第1弾<br>
-              ・商品: ナガノパープル 1kg以上 (2～3房)<br>
-              ・時期: 9月上旬にお届け<br><br>
-              第2弾<br>
-              ・商品: シャインマスカット1kg以上 (2～3房)<br>
-              ・時期: 9月下旬にお届け<br><br>
-              第3弾<br>
-              ・商品: クイーンニーナ1kg以上 (2～3房)<br>
-              ・時期: 10月上旬にお届け<br><br>
-              ※お届け時間帯のみご指定可能です。発送時期およびご指定方法については事前にご案内いたします。
-            </p>
-          </div>
-        </div>
-    </div>
-    <div class="single card plan-explanation">
-      <h5 class="card-header"> その他プランの説明 </h5>
-      <div class="card-body">
-       ▼ オーナー契約期間<br>
-       2019年2月20日 まで<br> <br>
-       ▼備考<br>
-       ・クール便にてお送りいたします。<br>
-       ・運送会社（ヤマト運輸）の送料値上げに伴い、登録金額を改定させていただくこととなりました。オーナーさまのご負担が大きくなってしまい誠に恐縮ではございますが、何卒、ご理解いただきますようお願い申し上げます。<br>
-       ・沖縄やその他離島へのお届けの場合、別途追加送料を頂く場合がございます。お届け先に応じて、オーナーさまに個別でご連絡致します。 <br> <br>
-       <a href="/plan/law/135">特定商取引に関する表記</a>
+        <% end %>
       </div>
+      <div class="single card plan-explanation">
+        <h5 class="card-header"> その他プランの説明 </h5>
+        <div class="card-body">
+         ▼ オーナー契約期間<br>
+         2019年2月20日 まで<br> <br>
+         ▼備考<br>
+         ・クール便にてお送りいたします。<br>
+         ・運送会社（ヤマト運輸）の送料値上げに伴い、登録金額を改定させていただくこととなりました。オーナーさまのご負担が大きくなってしまい誠に恐縮ではございますが、何卒、ご理解いただきますようお願い申し上げます。<br>
+         ・沖縄やその他離島へのお届けの場合、別途追加送料を頂く場合がございます。お届け先に応じて、オーナーさまに個別でご連絡致します。 <br> <br>
+         <a href="/plan/law/135">特定商取引に関する表記</a>
+        </div>
+      </div>
+
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 </article>
 

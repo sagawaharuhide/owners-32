@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(version: 20180813015648) do
   end
 
   add_foreign_key "addresses", "users"
-  add_foreign_key "courses", "plans"
   add_foreign_key "orders", "addresses"
   add_foreign_key "orders", "courses"
 end
