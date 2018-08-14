@@ -17,8 +17,7 @@
     </div>
     <div class="plans_pc d-flex justify-content-center flex-wrap">
       <% @plans.each do |plan| %>
-        <div class="plan_card_medium">
-          <%= link_to "","/plans/#{plan.id}" %>
+        <%= link_to plan_path(plan), class:"plan_card_medium" do %>
           <div class="card float-card">
             <img class="card-img-top" src="<%= plan.img_url %>" alt="Card image cap">
             <div class="card-body">
@@ -27,13 +26,13 @@
               <h5 class="card_title"><%= plan.title %></h5>
               <div class="d-flex justify-content-lg-between justify-content-end card_footer">
                 <div class="location d-lg-inline-block">
-                  <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"> ###
+                  <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"><%= plan.area %>
                 </div>
-                <div class="price"> ###円 </div>
+                <div class="price">###円</div>
               </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </section>
