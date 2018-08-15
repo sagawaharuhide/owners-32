@@ -2,7 +2,12 @@
   <div class="mx-auto mypage_main_pc">
     <div class="d-none d-lg-block mypage_left_menu">
       <div class="mypage-detail-menu">
-        <img src="https://d1xgtamobon6ik.cloudfront.net/profile_image_default.png">
+        <% if current_user.image? %>
+          <%= image_tag current_user.image %>
+          <% else %>
+          <%= image_tag 'https://d1xgtamobon6ik.cloudfront.net/profile_image_default.png' %>
+        <% end %>
+        <!-- <img src="https://d1xgtamobon6ik.cloudfront.net/profile_image_default.png"> -->
         <nav>
           <p class="text-center"><%= current_user.last_name %> <%= current_user.first_name %></p>
           <%= link_to "マイページ", user_path(current_user) %>
@@ -31,13 +36,13 @@
             <div class="col"> </div>
         </div>
         </div>
-        <%= form_tag("/users/#{@user.id}", method: :patch ) do %>
+        <%= form_for(current_user) do |f| %>
           <div class="form-group">
             <label for="last_name">
               姓
               <label class="user-edit-required">※</label>
             </label>
-            <input type="text" name="last_name" class="form-control" id="last_name" placeholder="姓" value= <%= current_user.last_name %> >
+            <input type="text" name="user[last_name]" class="form-control" id="last_name" placeholder="姓" value= <%= current_user.last_name %> >
             <div class="invalid-feedback"> 姓を入力してください。 </div>
           </div>
           <div class="form-group">
@@ -45,7 +50,7 @@
               名
               <label class="user-edit-required">※</label>
             </label>
-            <input type="text" name="first_name" class="form-control" id="first_name" placeholder="名" value= <%= current_user.first_name %> >
+            <input type="text" name="user[first_name]" class="form-control" id="first_name" placeholder="名" value= <%= current_user.first_name %> >
             <div class="invalid-feedback"> 名前を入力してください。 </div>
           </div>
           <div class="form-group">
@@ -53,12 +58,12 @@
               メールアドレス
               <label class="user-edit-required">※</label>
             </label>
-            <input type="email" name="email" class="form-control" id="email" placeholder="メールアドレス" value= <%= current_user.email %> >
+            <input type="email" name="user[email]" class="form-control" id="email" placeholder="メールアドレス" value= <%= current_user.email %> >
             <div class="invalid-feedback"> メールアドレスを入力してください。 </div>
           </div>
           <div class="form-group">
             <label for="email">メール受信</label><br>
-            <input type="checkbox" id="email_magazine_subscribed" name="email_magazine_subscribed" value="1" checked="">
+            <input type="checkbox" id="email_magazine_subscribed" name="user[email_magazine_subscribed]" value="1" checked="">
             <label for="email_magazine_subscribed"> 受信する </label><br>
              ※ 商品発送案内の通知は、メール受信が必要になります
           </div>
@@ -72,8 +77,8 @@
             <small id="password" class="form-text text-muted"> パスワードは半角英数記号の7文字以上でご入力下さい。 </small>
           </div>
           <div class="form-group">
-            <label for="profile_image">プロフィール画像</label>
-            <input type="file" id="profile_image" name="profile_image" accept="image/jpeg" key="profile/lZGkG91T0p7glshfrawic/20180813161723.jpg" digest="be0f9437f6a38cd67ccaedc5d047cfc6">
+            <label for="image">プロフィール画像</label>
+            <%= f.file_field :image %>
             <div id="profile_image_preview"></div>
           </div>
           <div>
