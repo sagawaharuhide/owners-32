@@ -10,7 +10,7 @@
         <nav>
           <p class="text-center"><%= current_user.last_name%> <%= current_user.first_name%></p>
           <%= link_to "マイページ", user_path(current_user) %>
-          <%= link_to "アドレス帳", user_addresses_path(current_user) %>
+          <a href="#"><i></i>アドレス帳</a>
           <%= link_to "アカウント設定", edit_user_path(current_user) %>
           <a href="#"><i></i>購入履歴</a>
         </nav>
@@ -28,48 +28,6 @@
       </div>
     </div>
     <div class="mypage_main_contents">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <h2>運営からのお知らせ</h2>
-          <div class="owners-run-news">
-            <div>
-              <time>2018/07/30</time>
-              <p>
-                <a href="https://owner-style.com/plan/165" target="_blank"> 鹿児島県南さつま市から薩摩あわびのプランを公開しました！ </a>
-              </p>
-            </div>
-            <div>
-              <time>2018/07/30</time>
-              <p>
-                <a href="https://owner-style.com/plan/167" target="_blank"> ラオス ロンラン村から届くラオスの森コーヒープランを公開しました！ </a>
-              </p>
-            </div>
-            <div>
-              <time>2018/07/30</time>
-              <p> 本日、OWNERSがリニューアルオープンしました！
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6">
-          <div class="d-block d-md-none mt-5">
-          </div>
-          <h2>新着手づくり日誌</h2>
-          <div class="diary-posts"> </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 mt-5">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <h2> 契約中のプラン </h2>
-          現在契約中のプランはありません<br>
-          <a href="/">お気に入りの生産者を探してみましょう！</a>
-          <h2></h2>
-        </div>
-      </div>
     </div>
   </div>
 </div>
