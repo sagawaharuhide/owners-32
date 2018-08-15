@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
 
   def index
   end
@@ -11,12 +12,17 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    user.last_name = params[:last_name]
-    user.first_name = params[:first_name]
-    user.email = params[:email]
-    user.save
-    redirect_to user_path(current_user)
+    if current_user.update(user_params)
+      redirect_to user_path(current_user)
+    else
+      render :edit
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:last_name, :first_name, :email, :image, :password)
   end
 
 end
