@@ -7,7 +7,6 @@
           <% else %>
           <%= image_tag 'https://d1xgtamobon6ik.cloudfront.net/profile_image_default.png' %>
         <% end %>
-        <!-- <img src="https://d1xgtamobon6ik.cloudfront.net/profile_image_default.png"> -->
         <nav>
           <p class="text-center"><%= current_user.last_name %> <%= current_user.first_name %></p>
           <%= link_to "マイページ", user_path(current_user) %>
