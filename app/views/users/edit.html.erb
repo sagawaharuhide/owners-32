@@ -2,7 +2,11 @@
   <div class="mx-auto mypage_main_pc">
     <div class="d-none d-lg-block mypage_left_menu">
       <div class="mypage-detail-menu">
-        <img src="https://d1xgtamobon6ik.cloudfront.net/profile_image_default.png">
+        <% if current_user.image? %>
+          <%= image_tag current_user.image %>
+          <% else %>
+          <%= image_tag 'https://d1xgtamobon6ik.cloudfront.net/profile_image_default.png' %>
+        <% end %>
         <nav>
           <p class="text-center"><%= current_user.last_name %> <%= current_user.first_name %></p>
           <%= link_to "マイページ", user_path(current_user) %>
@@ -31,21 +35,21 @@
             <div class="col"> </div>
         </div>
         </div>
-        <form class="h-adr" method="POST" id="form">
+        <%= form_for(current_user) do |f| %>
           <div class="form-group">
-            <label for="family_name">
+            <label for="last_name">
               姓
               <label class="user-edit-required">※</label>
             </label>
-            <input type="text" name="family_name" class="form-control" id="family_name" placeholder="姓" value= <%= current_user.last_name %> >
+            <input type="text" name="user[last_name]" class="form-control" id="last_name" placeholder="姓" value= <%= current_user.last_name %> >
             <div class="invalid-feedback"> 姓を入力してください。 </div>
           </div>
           <div class="form-group">
-            <label for="given_name">
+            <label for="first_name">
               名
               <label class="user-edit-required">※</label>
             </label>
-            <input type="text" name="given_name" class="form-control" id="given_name" placeholder="名" value= <%= current_user.first_name %> >
+            <input type="text" name="user[first_name]" class="form-control" id="first_name" placeholder="名" value= <%= current_user.first_name %> >
             <div class="invalid-feedback"> 名前を入力してください。 </div>
           </div>
           <div class="form-group">
@@ -53,12 +57,12 @@
               メールアドレス
               <label class="user-edit-required">※</label>
             </label>
-            <input type="email" name="email" class="form-control" id="email" placeholder="メールアドレス" value= <%= current_user.email %> >
+            <input type="email" name="user[email]" class="form-control" id="email" placeholder="メールアドレス" value= <%= current_user.email %> >
             <div class="invalid-feedback"> メールアドレスを入力してください。 </div>
           </div>
           <div class="form-group">
             <label for="email">メール受信</label><br>
-            <input type="checkbox" id="email_magazine_subscribed" name="email_magazine_subscribed" value="1" checked="">
+            <input type="checkbox" id="email_magazine_subscribed" name="user[email_magazine_subscribed]" value="1" checked="">
             <label for="email_magazine_subscribed"> 受信する </label><br>
              ※ 商品発送案内の通知は、メール受信が必要になります
           </div>
@@ -67,19 +71,19 @@
               パスワード
               <label class="user-edit-required">※</label>
             </label>
-            <input type="password" name="password" class="form-control" id="password" placeholder="パスワード" value=>
+            <input type="password" name="user[password]" class="form-control" id="password" placeholder="パスワード" value=>
             <div class="invalid-feedback"> パスワードを入力して下さい。 </div>
-            <small id="password" class="form-text text-muted"> パスワードは半角英数記号の7文字以上でご入力下さい。 </small>
+            <small id="password" class="form-text text-muted"> パスワードは半角英数記号の6文字以上でご入力下さい。  <em>※ 編集にはパスワードが必要です。</em></small>
           </div>
           <div class="form-group">
-            <label for="profile_image">プロフィール画像</label>
-            <input type="file" id="profile_image" name="profile_image" accept="image/jpeg" key="profile/lZGkG91T0p7glshfrawic/20180813161723.jpg" digest="be0f9437f6a38cd67ccaedc5d047cfc6">
+            <label for="image">プロフィール画像</label>
+            <%= f.file_field :image %>
             <div id="profile_image_preview"></div>
           </div>
           <div>
             <button type="submit" class="user-update-button submit" id="submit_button">更新</button>
           </div>
-        </form>
+        <% end %>
       </div>
     </div>
   </div>
