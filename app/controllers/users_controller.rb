@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
 
   def index
   end
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:last_name, :first_name, :email, :image)
+    params.require(:user).permit(:last_name, :first_name, :email, :image, :password)
   end
 
 end
