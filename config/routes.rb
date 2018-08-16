@@ -9,7 +9,9 @@ Rails.application.routes.draw do
       post 'confirm', on: :collection
     end
   end
-  resources :users, only: [:index, :show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update] do
+    resources :addresses, only: [:index]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
