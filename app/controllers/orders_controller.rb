@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
   end
 
   def input
+
     @course = Course.find(params[:course_id])
     @order = Order.new(order_params)
   end
@@ -33,7 +34,7 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:quantity)
+      params.require(:order).permit(:quantity).merge(course_id: params[:course_id])
     end
 
 end
