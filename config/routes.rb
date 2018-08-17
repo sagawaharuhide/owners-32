@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'plans#index'
   get 'orders/confirm'
-  resources :plans, only: [:index, :show] do
+  resources :plans, only: [:index, :show]
+  resources :courses, only: [:index, :show] do
     resources :orders, only: [:index, :show]
   end
   resources :users, only: [:index, :show, :edit, :update] do
