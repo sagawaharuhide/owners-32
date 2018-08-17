@@ -1,0 +1,74 @@
+<div class="mypage_container">
+  <div class="mx-auto mypage_main_pc">
+    <div class="d-none d-lg-block mypage_left_menu">
+      <div class="mypage-detail-menu">
+        <% if current_user.image? %>
+          <%= image_tag current_user.image %>
+          <% else %>
+          <%= image_tag 'https://d1xgtamobon6ik.cloudfront.net/profile_image_default.png' %>
+        <% end %>
+        <nav>
+          <p class="text-center"><%= current_user.last_name%> <%= current_user.first_name%></p>
+          <%= link_to "マイページ", user_path(current_user) %>
+          <%= link_to "アドレス帳", user_addresses_path(current_user) %>
+          <%= link_to "アカウント設定", edit_user_path(current_user) %>
+          <a href="#"><i></i>購入履歴</a>
+        </nav>
+      </div>
+      <div class="text-center contact-to-owners">
+        <h3 class="text-center">運営に意見を送る</h3>
+        <form class="owners_form">
+          <input type="hidden" id="contact_csrf_token" value="Ijk1YTEyOTgwMGUwZDQ4N2Q1ZTMyOWFhODE0ZTdlNTc2ZTI5MGMwNWEi.Dk7y-w.2_1tDAt0cz3dQAj5oDkmxbPeIbU">
+          <textarea id="contact_message_PC" placeholder="ご意見・ご要望などございましたらこちらからお寄せ下さい
+          なお、返信を要する内容については、問い合わせフォームよりお願い致します。" class="mx-auto"></textarea>
+          <input type="hidden" id="contact_user_id" value="lZGkG91T0p7glshfrawic">
+          <input type="hidden" id="contact_producer_id" value="">
+          <input name="confirm" style="width:130px;" onclick="return create_inquiry(this, 'PC')" type="submit" value="送信">
+        </form>
+      </div>
+    </div>
+    <div class="mypage_main_contents">
+      <h2>住所情報登録</h2>
+      <div class="add-addresses-container">
+        <form class="h-adr needs-validation" method="POST" id="form">
+          <div class="form-group">
+            <label for="name">氏名:※</label>
+            <input type="text" name="name" class="form-control" id="name" placeholder="氏名" value="" required="">
+            <div class="invalid-feedback"> 氏名を入力して下さい。 </div>
+          </div>
+          <div class="form-group">
+            <label for="zip_code_1">郵便番号:※</label>
+            <em>ハイフン (-) 無しの半角数字で入力してください。</em>
+            <div class="form-inline">
+              <input type="text" class="form-control postal_code p-postal-code" name="zip_code_1" placeholder="0000000" maxlength="7" value="" required="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="state">都道府県:※ </label>
+            <%= render partial: 'states' %>
+          </div>
+          <div class="form-group">
+            <label for="address_1">住所1:※ </label>
+            <input type="text" class="form-control p-locality p-street-address" name="address_1" placeholder="例）台東区松が谷" value="" required="">
+            <div class="invalid-feedback"> 住所を入力して下さい。 </div>
+          </div>
+          <div class="form-group">
+            <label for="address_2">住所2 (番地, 建物名):※ </label>
+            <input type="text" class="form-control p-extended-address" name="address_2" placeholder="例）1-2-3 ○○ビル3階" value="" required="">
+          </div>
+          <div class="form-group">
+            <label for="tel">電話番号:※</label>
+            <em>ハイフン (-) 無しの半角数字で入力してください。</em>
+            <input type="tel" class="form-control add-tell-number" name="tel" placeholder="例）08011112222" value="" required="">
+            <div class="invalid-feedback"> 電話番号を入力して下さい。 </div>
+          </div>
+          <input type="hidden" class="p-country-name" value="Japan">
+          <input id="csrf_token" name="csrf_token" type="hidden" value="Ijk1YTEyOTgwMGUwZDQ4N2Q1ZTMyOWFhODE0ZTdlNTc2ZTI5MGMwNWEi.DlauIw.5DUU-ZE-jgL6_Pfd56x6ICjOszA">
+        </form>
+      </div>
+      <div>
+        <button type="button" class="green add-addresses-button" id="submit_button">送信</button>
+      </div>
+    </div>
+  </div>
+</div>
