@@ -50,7 +50,7 @@
               <h3>ラオスの森コーヒー定期便コース</h3>
               <div class="d-flex justify-content-between price">
                 <div> 10,000円 </div>
-                <%= form_for [@plan, @order] do |f| %>
+                <%= form_for [@course, @order] do |f| %>
                 <div><%= @order.quantity %>
                   <%= f.hidden_field :quantity %>口
                 </div>

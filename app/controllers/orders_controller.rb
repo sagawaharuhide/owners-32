@@ -7,19 +7,20 @@ class OrdersController < ApplicationController
   end
 
   def input
-    @plan = Plan.find(params[:plan_id])
+    @course = Course.find(params[:course_id])
     @order = Order.new(order_params)
   end
 
   def confirm
-    @plan = Plan.find(params[:plan_id])
+    @course = Course.find(params[:course_id])
+    @plan = @course.plan
     @order = Order.new(order_params)
 
     render :new if params[:back]
   end
 
   def create
-    @plan = Plan.find(params[:plan_id])
+    @course = Course.find(params[:course_id])
     @order = Order.new(order_params)
 
     if params[:back]
