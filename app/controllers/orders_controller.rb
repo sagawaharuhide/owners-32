@@ -13,6 +13,8 @@ class OrdersController < ApplicationController
   def confirm
     @plan = Plan.find(params[:plan_id])
     @order = Order.new(order_params)
+
+    render :new if params[:back]
   end
 
   def create
@@ -20,8 +22,6 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
 
     if params[:back]
-      render :new
-    elsif params[:back_input]
       render :input
     elsif @order.save
     else
