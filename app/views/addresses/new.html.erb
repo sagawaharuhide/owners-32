@@ -38,10 +38,9 @@
           </div>
           <div class="form-group">
             <label for="zip_code_1">郵便番号:※</label>
+            <em>ハイフン (-) 無しの半角数字で入力してください。</em>
             <div class="form-inline">
-              <input type="text" class="form-control postal_code p-postal-code" name="zip_code_1" placeholder="000" maxlength="3" value="" required="">
-              <span>-</span>
-              <input type="text" class="form-control postal_code p-postal-code" name="zip_code_2" placeholder="0000" maxlength="4" value="" required="">
+              <input type="text" class="form-control postal_code p-postal-code" name="zip_code_1" placeholder="0000000" maxlength="7" value="" required="">
             </div>
           </div>
           <div class="form-group">
@@ -59,7 +58,8 @@
           </div>
           <div class="form-group">
             <label for="tel">電話番号:※</label>
-            <input type="tel" class="form-control add-tell-number" name="tel" placeholder="例）00-0000-0000" value="" required="">
+            <em>ハイフン (-) 無しの半角数字で入力してください。</em>
+            <input type="tel" class="form-control add-tell-number" name="tel" placeholder="例）08011112222" value="" required="">
             <div class="invalid-feedback"> 電話番号を入力して下さい。 </div>
           </div>
           <input type="hidden" class="p-country-name" value="Japan">
