@@ -1,0 +1,111 @@
+<div class="mypage_container">
+  <div class="mx-auto mypage_main_pc">
+    <div class="d-none d-lg-block mypage_left_menu">
+      <div class="mypage-detail-menu">
+        <% if current_user.image? %>
+          <%= image_tag current_user.image %>
+          <% else %>
+          <%= image_tag 'https://d1xgtamobon6ik.cloudfront.net/profile_image_default.png' %>
+        <% end %>
+        <nav>
+          <p class="text-center"><%= current_user.last_name%> <%= current_user.first_name%></p>
+          <%= link_to "マイページ", user_path(current_user) %>
+          <a href="#"><i></i>アドレス帳</a>
+          <%= link_to "アカウント設定", edit_user_path(current_user) %>
+          <a href="#"><i></i>購入履歴</a>
+        </nav>
+      </div>
+      <div class="text-center contact-to-owners">
+        <h3 class="text-center">運営に意見を送る</h3>
+        <form class="owners_form">
+          <input type="hidden" id="contact_csrf_token" value="Ijk1YTEyOTgwMGUwZDQ4N2Q1ZTMyOWFhODE0ZTdlNTc2ZTI5MGMwNWEi.Dk7y-w.2_1tDAt0cz3dQAj5oDkmxbPeIbU">
+          <textarea id="contact_message_PC" placeholder="ご意見・ご要望などございましたらこちらからお寄せ下さい
+          なお、返信を要する内容については、問い合わせフォームよりお願い致します。" class="mx-auto"></textarea>
+          <input type="hidden" id="contact_user_id" value="lZGkG91T0p7glshfrawic">
+          <input type="hidden" id="contact_producer_id" value="">
+          <input name="confirm" style="width:130px;" onclick="return create_inquiry(this, 'PC')" type="submit" value="送信">
+        </form>
+      </div>
+    </div>
+    <div class="mypage_main_contents">
+      <h2>アドレス帳</h2>
+      <div class="user-addresses-infomation">
+        登録プランのお届け先変更をされたい場合は、こちらのページではできません。<br>
+        マイページの「契約中のプラン」から変更してください。
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="registered-addresses-deliveries">
+            <h3>住所 1</h3>
+            <table>
+              <tbody>
+                <tr>
+                  <th>氏名</th>
+                  <td>ああいい</td>
+                </tr>
+                <tr>
+                  <th>郵便番号</th>
+                  <td>000-000</td>
+                </tr>
+                <tr>
+                  <th>都道府県</th>
+                  <td>東京都</td>
+                </tr>
+                <tr>
+                  <th>住所</th>
+                  <td>渋谷区123-123</td>
+                </tr>
+                <tr>
+                  <th>電話番号</th>
+                  <td>080xxxxxxxx</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="user-addresses-edit">
+              <button class="white addresses-edit-button" onclick="location.href='/owner_deliveries/edit/2wh0D7j4QSs8QLEyuh2z6J'"> 編集
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="registered-addresses-deliveries">
+            <h3>住所 2</h3>
+            <table>
+              <tbody>
+                <tr>
+                  <th>氏名</th>
+                  <td>ああいい</td>
+                </tr>
+                <tr>
+                  <th>郵便番号</th>
+                  <td>123-123</td>
+                </tr>
+                <tr>
+                  <th>都道府県</th>
+                  <td>神奈川県</td>
+                </tr>
+                <tr>
+                  <th>住所</th>
+                  <td>青葉区横浜市00-00</td>
+                </tr>
+                <tr>
+                  <th>電話番号</th>
+                  <td>080xxxxxxxx</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="user-addresses-edit">
+              <button class="white addresses-edit-button" onclick="location.href='/owner_deliveries/edit/1PFSvgqfTeZN9lW4ktprs5'"> 編集 </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="add_addresses_container">
+        <button class="white addresses-add-button" onclick="location.href='/owner_deliveries/add'">
+          住所を新規追加
+          <i></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
