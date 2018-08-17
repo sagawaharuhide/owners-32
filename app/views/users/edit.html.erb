@@ -10,7 +10,7 @@
         <nav>
           <p class="text-center"><%= current_user.last_name %> <%= current_user.first_name %></p>
           <%= link_to "マイページ", user_path(current_user) %>
-          <a href="#"><i></i>アドレス帳</a>
+          <%= link_to "アドレス帳", user_addresses_path(current_user) %>
           <%= link_to "アカウント設定", edit_user_path(current_user) %>
           <a href="#"><i></i>購入履歴</a>
         </nav>
