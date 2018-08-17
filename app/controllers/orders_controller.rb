@@ -7,7 +7,6 @@ class OrdersController < ApplicationController
   end
 
   def input
-
     @course = Course.find(params[:course_id])
     @order = Order.new(order_params)
   end
@@ -22,6 +21,7 @@ class OrdersController < ApplicationController
 
   def create
     @course = Course.find(params[:course_id])
+    @plan = @course.plan
     @order = Order.new(order_params)
 
     if params[:back]
