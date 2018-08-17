@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
 
   def new
-    @plan = Plan.find(params[:plan_id])
+    @course = Course.find(params[:course_id])
+    @plan = @course.plan
     @order = Order.new
   end
 
