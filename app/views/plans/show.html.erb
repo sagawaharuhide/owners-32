@@ -72,7 +72,7 @@
             <div class="header">
               <h5 class="card-title"><%= course.name %></h5>
               <div class="price mb-3"> <%= course.price %> 円（消費税・送料込み）</div>
-              <%= link_to plan_orders_path(course.plan), class:"text-center be-an-owner-btn" do %>
+              <%= link_to new_plan_order_path(course.plan), class:"text-center be-an-owner-btn" do %>
                 このコースでオーナーになる
               <% end %>
             </div>
@@ -101,4 +101,3 @@
   </section>
 
 </article>
-

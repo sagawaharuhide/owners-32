@@ -66,7 +66,9 @@
             </div>
             <div class="col text-center align-self-center course_count_container">
               <img id="count_button_decrement_149" src="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-minus-disabled.svg" data-image-enabled="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-minus.svg" data-image-disabled="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-minus-disabled.svg" onclick="decrement('149')" class="count_button">
-              <span id="count_149" class="course_count"> 0 </span>
+              <%= form_for(@order, url: input_plan_orders_path(@plan), html: {method: 'GET'}) do |f| %>
+              <span id="count_149" class="course_count">
+              <%= f.number_field :quantity %> </span>
               <img src="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-plus.svg" onclick="increment('149')" class="count_button">
               <input type="hidden" id="hidden_count_149" class="order-counter" value="0">
             </div>
@@ -97,7 +99,8 @@
         <div class="container d-none d-lg-block left submit_box">
           <div class="row">
             <div class="col text-right">
-              <input type="submit" value="お届け先指定へ">
+              <%= f.submit 'お届け先指定へ'%>
+              <% end %>
             </div>
           </div>
         </div>
