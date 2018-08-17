@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
 
   def index
-    @plan = Plan.find(params[:plan_id])
+    @course = Course.find(params[:course_id])
+    @plan = @course.plan
   end
 
 end

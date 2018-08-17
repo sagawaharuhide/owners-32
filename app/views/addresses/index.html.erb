@@ -10,7 +10,7 @@
         <nav>
           <p class="text-center"><%= current_user.last_name%> <%= current_user.first_name%></p>
           <%= link_to "マイページ", user_path(current_user) %>
-          <a href="#"><i></i>アドレス帳</a>
+          <%= link_to "アドレス帳", user_addresses_path(current_user) %>
           <%= link_to "アカウント設定", edit_user_path(current_user) %>
           <a href="#"><i></i>購入履歴</a>
         </nav>
@@ -101,9 +101,8 @@
         </div>
       </div>
       <div class="add_addresses_container">
-        <button class="white addresses-add-button" onclick="location.href='/owner_deliveries/add'">
-          住所を新規追加
-          <i></i>
+        <button class="white addresses-add-button">
+          <%= link_to "住所を新規追加", new_user_address_path(current_user), :style=>"color:#427833;" %>
         </button>
       </div>
     </div>
