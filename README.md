@@ -13,7 +13,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |full_name|string|null: false|
-|postal_code|integer|null: false|
+|postal_code|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
