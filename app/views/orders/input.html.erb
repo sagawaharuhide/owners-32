@@ -41,12 +41,17 @@
               <h3>ラオスの森コーヒー定期便コース</h3>
               <div class="d-flex justify-content-between price">
                 <div>10,000円</div>
-                <div>1口</div>
+                <%= form_for(@order, url:  confirm_course_orders_path(@course,@order.quantity), html: {method: 'GET'}) do |f| %>
+                <div><%= @order.quantity %>
+                  <%= f.hidden_field :quantity %>口
+                </div>
               </div>
               <h3>ラオスの森コーヒーお気軽コース</h3>
               <div class="d-flex justify-content-between price">
                 <div>5,000円</div>
-                <div>1口</div>
+                <div><%= @order.quantity %>
+                  <%= f.hidden_field :quantity %>口
+                </div>
               </div>
             </td>
             <td class="align-top">
@@ -54,12 +59,16 @@
                 <h3>ラオスの森コーヒー定期便コース</h3>
                 <div class="d-flex justify-content-between price">
                   <div>10,000円</div>
-                  <div>1口</div>
+                  <div><%= @order.quantity %>
+                    <%= f.hidden_field :quantity %>口
+                  </div>
                 </div>
                 <h3>ラオスの森コーヒーお気軽コース</h3>
                 <div class="d-flex justify-content-between price">
                   <div>5,000円</div>
-                  <div>1口</div>
+                  <div><%= @order.quantity %>
+                    <%= f.hidden_field :quantity %>口
+                  </div>
                 </div>
               </div>
               <div class="form-check">
@@ -180,12 +189,12 @@
   </div>
   <div class="row d-none d-lg-block">
     <div class="col p-0 d-flex justify-content-end">
-      <button type="button" onclick="location.href='/orders/select_course/167'" class="white">
-        <i class="arrow_left_green"></i> 戻る
-      </button>
+      <%= f.submit '戻る', name: 'back', class: 'white' %>
+        <i class="arrow_left_green"></i>
       <button type="submit" class="submit_button" id="submit_button_pc">
         <i class="arrow_right_white"></i> お申込み内容の確認へ
       </button>
     </div>
+    <% end %>
   </div>
 </div>

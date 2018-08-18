@@ -48,8 +48,8 @@
                 <div class="card-body">
                   <p class="card-text"><%= course.detail %>
                   </p>
-                  <div class="text-center mt-2">
-                    <span class="button d-block" onclick="location.href='#course_list'"> コース詳細 </span>
+                  <div class="text-center mt-2" id="heading_to_course_detail">
+                    <span class="button d-block"> コース詳細 </span>
                   </div>
                 </div>
               </div>
@@ -72,7 +72,7 @@
             <div class="header">
               <h5 class="card-title"><%= course.name %></h5>
               <div class="price mb-3"> <%= course.price %> 円（消費税・送料込み）</div>
-              <%= link_to course_orders_path(course), class:"text-center be-an-owner-btn" do %>
+              <%= link_to new_course_order_path(course), class:"text-center be-an-owner-btn" do %>
                 このコースでオーナーになる
               <% end %>
             </div>
@@ -95,10 +95,9 @@
          <a href="/plan/law/135">特定商取引に関する表記</a>
         </div>
       </div>
-
+      <a href="#course_list" class="button_course_list button_green" id="button_course_list">オーナーになる</a>
     </div>
 
   </section>
 
 </article>
-
