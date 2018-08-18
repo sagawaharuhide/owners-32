@@ -61,16 +61,17 @@
               <div id="triangle_149" class="text-center triangle">▶</div>
             </div>
             <div class="col pt-1 pb-1 text-left align-self-center course_title" onclick="toggleCollapse('149')">
-              <strong class="title"> 「菜種油まごどさ2本」コース </strong>
-              <p class="mb-0 price"> 2,600 円 / 1口 </p>
+              <strong class="title"><%= @course.name %></strong>
+              <p id="course_price" class="mb-0 price" data-price="<%= @course.price %>"><%= @course.price %> / 1口 </p>
             </div>
             <div class="col text-center align-self-center course_count_container">
-              <img id="count_button_decrement_149" src="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-minus-disabled.svg" data-image-enabled="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-minus.svg" data-image-disabled="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-minus-disabled.svg" onclick="decrement('149')" class="count_button">
-              <span id="count_149" class="course_count"> 0 </span>
-              <img src="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-plus.svg" onclick="increment('149')" class="count_button">
-              <input type="hidden" id="hidden_count_149" class="order-counter" value="0">
+              <%= form_for(@order, url: input_course_orders_path(@course), html: {method: 'GET'}) do |f| %>
+              <img id="count_button_decrement" src="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-minus-disabled.svg" data-image-enabled="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-minus.svg" data-image-disabled="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-minus-disabled.svg" class="count_button">
+              <span id="course_count" class="course_count"> 0 </span>
+              <img id="count_button_increment" src="https://d1xgtamobon6ik.cloudfront.net/static/images/orders/select_course/count_button/icon-plus.svg" >
+              <%= f.hidden_field :quantity, value: 0 %>
             </div>
-            <div class="col text-center align-self-center d-none d-lg-block" id="subtotal_149" data-price="2600"> 0 円 </div>
+            <div class="col text-center align-self-center d-none d-lg-block" id="subtotal" data-price="2600"> 0 円 </div>
           </div>
           <div class="row">
             <div id="accordion_body_149" class="collapse col align-self-center course_detail" aria-labelledby="accordion_heading_149" data-parent="#select_course">
@@ -91,13 +92,14 @@
         <div class="selected_course_sum d-none d-lg-block left">
           <div class="tax_shipping_fee">(税・送料込み)</div>
           <div class="sum_title">合計</div>
-          <div class="sum" id="sum">7,400 円</div>
+          <div class="sum" id="sum">0 円</div>
           <hr>
         </div>
         <div class="container d-none d-lg-block left submit_box">
           <div class="row">
             <div class="col text-right">
-              <input type="submit" value="お届け先指定へ">
+              <%= f.submit 'お届け先指定へ'%>
+              <% end %>
             </div>
           </div>
         </div>
