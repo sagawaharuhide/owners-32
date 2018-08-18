@@ -22,6 +22,8 @@ $(function(){
     var quantity = $("#course_count").text();
     var total_price = (course_price * quantity).toLocaleString()
     document.getElementById("subtotal").innerHTML = total_price + '円'
+    document.getElementById("subtotal").setAttribute("data-price", total_price)
     document.getElementById("sum").innerHTML = total_price + '円'
+    document.getElementById("order_quantity").setAttribute("value", quantity)
   });
 });
