@@ -17,7 +17,7 @@
 |prefecture|string|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
-|tel|integer|null: false|
+|tel|string|null: false|
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
