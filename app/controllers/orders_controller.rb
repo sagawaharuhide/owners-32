@@ -9,6 +9,7 @@ class OrdersController < ApplicationController
   def input
     @course = Course.find(params[:course_id])
     @order = Order.new(order_params)
+    binding.pry
   end
 
   def confirm
