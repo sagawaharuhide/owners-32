@@ -1,5 +1,9 @@
 class AddressesController < ApplicationController
 
+  def index
+    @addresses = current_user.addresses.includes(:user)
+  end
+
   def new
     @user = User.find(params[:user_id])
     @address = Address.new
