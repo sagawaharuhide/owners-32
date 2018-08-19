@@ -20,6 +20,9 @@ class AddressesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   private
 
   def address_params
