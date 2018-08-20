@@ -64,7 +64,8 @@
                   </tbody>
                 </table>
                 <div class="user-addresses-edit">
-                  <button class="white addresses-edit-button" onclick="location.href='/owner_deliveries/edit/2wh0D7j4QSs8QLEyuh2z6J'"> 編集
+                  <button class="white addresses-edit-button">
+                    <%= link_to '編集', "/users/#{current_user.id}/addresses/#{address.id}/edit", :style=>"color:#427833;" %>
                   </button>
                 </div>
               </div>
