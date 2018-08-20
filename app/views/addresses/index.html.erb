@@ -34,71 +34,43 @@
         マイページの「契約中のプラン」から変更してください。
       </div>
       <div class="row">
-        <div class="col">
-          <div class="registered-addresses-deliveries">
-            <h3>住所 1</h3>
-            <table>
-              <tbody>
-                <tr>
-                  <th>氏名</th>
-                  <td>ああいい</td>
-                </tr>
-                <tr>
-                  <th>郵便番号</th>
-                  <td>000-000</td>
-                </tr>
-                <tr>
-                  <th>都道府県</th>
-                  <td>東京都</td>
-                </tr>
-                <tr>
-                  <th>住所</th>
-                  <td>渋谷区123-123</td>
-                </tr>
-                <tr>
-                  <th>電話番号</th>
-                  <td>080xxxxxxxx</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="user-addresses-edit">
-              <button class="white addresses-edit-button" onclick="location.href='/owner_deliveries/edit/2wh0D7j4QSs8QLEyuh2z6J'"> 編集
-              </button>
+        <% if @addresses %>
+          <% @addresses.each do |address| %>
+            <div class="col">
+              <div class="registered-addresses-deliveries">
+                <h3>住所 <%= address.id %></h3>
+                <table>
+                  <tbody>
+                    <tr>
+                      <th>氏名</th>
+                      <td><%= address.full_name %></td>
+                    </tr>
+                    <tr>
+                      <th>郵便番号</th>
+                      <td><%= address.postal_code %></td>
+                    </tr>
+                    <tr>
+                      <th>都道府県</th>
+                      <td><%= address.prefecture %></td>
+                    </tr>
+                    <tr>
+                      <th>住所</th>
+                      <td><%= address.city %> <%= address.house_number %></td>
+                    </tr>
+                    <tr>
+                      <th>電話番号</th>
+                      <td><%= address.tel %></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="user-addresses-edit">
+                  <button class="white addresses-edit-button" onclick="location.href='/owner_deliveries/edit/2wh0D7j4QSs8QLEyuh2z6J'"> 編集
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="registered-addresses-deliveries">
-            <h3>住所 2</h3>
-            <table>
-              <tbody>
-                <tr>
-                  <th>氏名</th>
-                  <td>ああいい</td>
-                </tr>
-                <tr>
-                  <th>郵便番号</th>
-                  <td>123-123</td>
-                </tr>
-                <tr>
-                  <th>都道府県</th>
-                  <td>神奈川県</td>
-                </tr>
-                <tr>
-                  <th>住所</th>
-                  <td>青葉区横浜市00-00</td>
-                </tr>
-                <tr>
-                  <th>電話番号</th>
-                  <td>080xxxxxxxx</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="user-addresses-edit">
-              <button class="white addresses-edit-button" onclick="location.href='/owner_deliveries/edit/1PFSvgqfTeZN9lW4ktprs5'"> 編集 </button>
-            </div>
-          </div>
-        </div>
+          <% end %>
+        <% end %>
       </div>
       <div class="add_addresses_container">
         <button class="white addresses-add-button">
