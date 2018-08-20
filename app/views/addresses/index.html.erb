@@ -1,32 +1,6 @@
 <div class="mypage_container">
   <div class="mx-auto mypage_main_pc">
-    <div class="d-none d-lg-block mypage_left_menu">
-      <div class="mypage-detail-menu">
-        <% if current_user.image? %>
-          <%= image_tag current_user.image %>
-          <% else %>
-          <%= image_tag 'https://d1xgtamobon6ik.cloudfront.net/profile_image_default.png' %>
-        <% end %>
-        <nav>
-          <p class="text-center"><%= current_user.last_name%> <%= current_user.first_name%></p>
-          <%= link_to "マイページ", user_path(current_user) %>
-          <%= link_to "アドレス帳", user_addresses_path(current_user) %>
-          <%= link_to "アカウント設定", edit_user_path(current_user) %>
-          <a href="#"><i></i>購入履歴</a>
-        </nav>
-      </div>
-      <div class="text-center contact-to-owners">
-        <h3 class="text-center">運営に意見を送る</h3>
-        <form class="owners_form">
-          <input type="hidden" id="contact_csrf_token" value="Ijk1YTEyOTgwMGUwZDQ4N2Q1ZTMyOWFhODE0ZTdlNTc2ZTI5MGMwNWEi.Dk7y-w.2_1tDAt0cz3dQAj5oDkmxbPeIbU">
-          <textarea id="contact_message_PC" placeholder="ご意見・ご要望などございましたらこちらからお寄せ下さい
-          なお、返信を要する内容については、問い合わせフォームよりお願い致します。" class="mx-auto"></textarea>
-          <input type="hidden" id="contact_user_id" value="lZGkG91T0p7glshfrawic">
-          <input type="hidden" id="contact_producer_id" value="">
-          <input name="confirm" style="width:130px;" onclick="return create_inquiry(this, 'PC')" type="submit" value="送信">
-        </form>
-      </div>
-    </div>
+    <%= render 'users/sidebar' %>
     <div class="mypage_main_contents">
       <h2>アドレス帳</h2>
       <div class="user-addresses-infomation">
@@ -35,42 +9,7 @@
       </div>
       <div class="row">
         <% if @addresses %>
-          <% @addresses.each do |address| %>
-            <div class="col">
-              <div class="registered-addresses-deliveries">
-                <h3>住所 <%= address.id %></h3>
-                <table>
-                  <tbody>
-                    <tr>
-                      <th>氏名</th>
-                      <td><%= address.full_name %></td>
-                    </tr>
-                    <tr>
-                      <th>郵便番号</th>
-                      <td><%= address.postal_code %></td>
-                    </tr>
-                    <tr>
-                      <th>都道府県</th>
-                      <td><%= address.prefecture %></td>
-                    </tr>
-                    <tr>
-                      <th>住所</th>
-                      <td><%= address.city %> <%= address.house_number %></td>
-                    </tr>
-                    <tr>
-                      <th>電話番号</th>
-                      <td><%= address.tel %></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="user-addresses-edit">
-                  <button class="white addresses-edit-button">
-                    <%= link_to '編集', "/users/#{current_user.id}/addresses/#{address.id}/edit", :style=>"color:#427833;" %>
-                  </button>
-                </div>
-              </div>
-            </div>
-          <% end %>
+          <%= render partial: 'address', collection: @addresses %>
         <% end %>
       </div>
       <div class="add_addresses_container">

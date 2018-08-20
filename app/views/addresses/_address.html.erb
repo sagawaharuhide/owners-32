@@ -1,0 +1,34 @@
+<div class="col">
+  <div class="registered-addresses-deliveries">
+    <h3>住所 <%= address.id %></h3>
+    <table>
+      <tbody>
+        <tr>
+          <th>氏名</th>
+          <td><%= address.full_name %></td>
+        </tr>
+        <tr>
+          <th>郵便番号</th>
+          <td><%= address.postal_code.insert(3, '-') %></td>
+        </tr>
+        <tr>
+          <th>都道府県</th>
+          <td><%= address.prefecture %></td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td><%= address.city %> <%= address.house_number %></td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td><%= address.tel %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="user-addresses-edit">
+      <button class="white addresses-edit-button">
+        <%= link_to '編集', "/users/#{current_user.id}/addresses/#{address.id}/edit", :style=>"color:#427833;" %>
+      </button>
+    </div>
+  </div>
+</div>
