@@ -4,7 +4,8 @@
     <div class="mypage_main_contents">
       <h2>住所情報登録</h2>
       <div class="add-addresses-container">
-        <%= form_for [@user, @address] do |f| %>
+        <%= form_for [@user, @address], html: {class: "h-adr"} do |f| %>
+          <span class="p-country-name" style="display:none;">Japan</span>
           <div class="form-group">
             <label for="full_name">氏名:※</label>
             <input type="text" name="address[full_name]" class="form-control" id="full_name" placeholder="氏名" value="" required="">
