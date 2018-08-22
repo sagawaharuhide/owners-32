@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
 
   def input
     @course = Course.find(params[:course_id])
+    @addresses = current_user.addresses
     @order = Order.new(order_params)
   end
 
@@ -15,14 +16,18 @@ class OrdersController < ApplicationController
     @course = Course.find(params[:course_id])
     @plan = @course.plan
     @order = Order.new(order_params)
+    @address = @order.address
+
 
     render :new if params[:back]
   end
 
   def create
     @course = Course.find(params[:course_id])
+    @addresses = current_user.addresses
     @plan = @course.plan
     @order = Order.new(order_params)
+    @address = @order.address
 
     if params[:back]
       render :input
@@ -34,7 +39,7 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:quantity).merge(course_id: params[:course_id])
+      params.require(:order).permit(:quantity, :address_id).merge(course_id: params[:course_id])
     end
 
 end

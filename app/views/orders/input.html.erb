@@ -38,17 +38,10 @@
           </tr>
           <tr>
             <td class="course_info hidden_on_sp align-top">
-              <h3>ラオスの森コーヒー定期便コース</h3>
+              <h3><%= @course.name %></h3>
               <div class="d-flex justify-content-between price">
-                <div>10,000円</div>
-                <%= form_for(@order, url:  confirm_course_orders_path(@course,@order.quantity), html: {method: 'GET'}) do |f| %>
-                <div><%= @order.quantity %>
-                  <%= f.hidden_field :quantity %>口
-                </div>
-              </div>
-              <h3>ラオスの森コーヒーお気軽コース</h3>
-              <div class="d-flex justify-content-between price">
-                <div>5,000円</div>
+                <div><%= @course.price %>円</div>
+                <%= form_for(@order, url:  confirm_course_orders_path(@course,@order), html: {method: 'GET'}) do |f| %>
                 <div><%= @order.quantity %>
                   <%= f.hidden_field :quantity %>口
                 </div>
@@ -71,12 +64,9 @@
                   </div>
                 </div>
               </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="registered_address[0]" id="2LaOaYtlQlw9vt6bBUV6xu_0" value="2LaOaYtlQlw9vt6bBUV6xu" onclick="clickAddressRadioButton(0, '2LaOaYtlQlw9vt6bBUV6xu_0')" checked="">
-                <label class="form-check-label radio" for="2LaOaYtlQlw9vt6bBUV6xu_0">
-                  <span>あ 様</span> 〒１１１-１１１１ 北海道 １ １
-                </label>
-              </div>
+              <% @addresses.each do |address| %>
+              <%= f.radio_button :address_id, address.id %> <%= address.full_name %>様 〒<%= address.postal_code.insert(3,"-") %> <%= address.prefecture %> <%= address.city %> <%= address.house_number %> <br />
+              <% end %>
               <a class="address_button" href="javascript:showAddressForm(0)"> 新しいお届け先を追加する </a>
               <div class="collapse" id="collapse_0">
                 <div class="card card-body">
