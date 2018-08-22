@@ -2,6 +2,7 @@ require 'carrierwave/storage/abstract'
 require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
+if Rails.env.production?
 CarrierWave.configure do |config|
   config.storage = :fog
   config.fog_provider = 'fog/aws'
@@ -14,4 +15,5 @@ CarrierWave.configure do |config|
 
   config.fog_directory  = 'sagawa2'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/sagawa2'
+end
 end
