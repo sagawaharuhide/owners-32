@@ -8,14 +8,14 @@
           <span class="p-country-name" style="display:none;">Japan</span>
           <div class="form-group">
             <label for="full_name">氏名:※</label>
-            <input type="text" name="address[full_name]" class="form-control" id="full_name" placeholder="氏名" value="" required="">
+            <input type="text" name="address[full_name]" class="form-control" id="full_name" placeholder="氏名" value="<%= @address.full_name %>">
             <div class="invalid-feedback"> 氏名を入力して下さい。 </div>
           </div>
           <div class="form-group">
             <label for="postal_code">郵便番号:※</label>
             <em>ハイフン (-) 無しの半角数字で入力してください。</em>
             <div class="form-inline">
-              <input type="text" class="form-control postal_code p-postal-code" name="address[postal_code]" placeholder="0000000" maxlength="7" value="" required="">
+              <input type="text" class="form-control postal_code p-postal-code" name="address[postal_code]" placeholder="0000000" maxlength="7" value="<%= @address.postal_code %>" required="">
             </div>
           </div>
           <div class="form-group">
@@ -24,17 +24,17 @@
           </div>
           <div class="form-group">
             <label for="city">住所1:※ </label>
-            <input type="text" class="form-control p-locality p-street-address" name="address[city]" placeholder="例）台東区松が谷" value="" required="">
+            <input type="text" class="form-control p-locality p-street-address" name="address[city]" placeholder="例）台東区松が谷" value="<%= @address.city %>" required="">
             <div class="invalid-feedback"> 住所を入力して下さい。 </div>
           </div>
           <div class="form-group">
             <label for="house_number">住所2 (番地, 建物名):※ </label>
-            <input type="text" class="form-control p-extended-address" name="address[house_number]" placeholder="例）1-2-3 ○○ビル3階" value="" required="">
+            <input type="text" class="form-control p-extended-address" name="address[house_number]" placeholder="例）1-2-3 ○○ビル3階" value="<%= @address.house_number %>" required="">
           </div>
           <div class="form-group">
             <label for="tel">電話番号:※</label>
             <em>ハイフン (-) 無しの半角数字で入力してください。</em>
-            <input type="tel" class="form-control add-tell-number" name="address[tel]" placeholder="例）08011112222" value="" required="">
+            <input type="tel" class="form-control add-tell-number" name="address[tel]" placeholder="例）08011112222" value="<%= @address.tel %>" required="">
             <div class="invalid-feedback"> 電話番号を入力して下さい。 </div>
           </div>
           <input type="hidden" class="p-country-name" value="Japan">
