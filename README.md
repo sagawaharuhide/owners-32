@@ -37,6 +37,7 @@
 
 ### Association
 - has_many : courses
+- belongs_to :category
 
 ## coursesテーブル
 
@@ -62,3 +63,11 @@
 - belongs_to : course
 - delegate_to : user, to: :address
 - belongs_to : address
+
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category|string|null: false|
+
+### Association
+- has_many : plans
