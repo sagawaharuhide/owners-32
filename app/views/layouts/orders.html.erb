@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Owners32</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+  </head>
+
+  <body>
+    <header class="index  d-log-block">
+      <nav class="d-flex align-itmes-center sticky">
+        <a href="/plans" class="mr-auto ml-2">
+          <%= image_tag 'logo.png', size:'109x29' %>
+        </a>
+        <div class="ml-3">
+          <a href="#" class="d-flex justify-content-end about"> OWNERSについて </a>
+        </div>
+        <div class="ml-3">
+          <a href="#" class="guide"> ご利用ガイド </a>
+        </div>
+        <% if user_signed_in? %>
+          <div class="dropdown authenticated_header_menu mr-3">
+            <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <% if current_user.image? %>
+                <%= image_tag current_user.image %>
+              <% else %>
+                <%= image_tag 'https://d1xgtamobon6ik.cloudfront.net/profile_image_default.png' %>
+              <% end %>
+              <%= current_user.last_name%> <%= current_user.first_name%>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to "マイページ", user_path(current_user), class: "dropdown-item" %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </div>
+        <% else %>
+          <div class="ml-3">
+            <a href="/users/sign_up" class="signup_login"> 会員登録 </a>
+          </div>
+          <div class="ml-3 mr-2">
+            <a href="/users/sign_in" class="signup_login"> ログイン </a>
+          </div>
+         <% end %>
+      </nav>
+    </header>
+
+    <%= yield %>
