@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180818044556) do
+ActiveRecord::Schema.define(version: 20180823035130) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "full_name", null: false
@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(version: 20180818044556) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "category", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -54,6 +60,8 @@ ActiveRecord::Schema.define(version: 20180818044556) do
     t.text "img_url"
     t.text "title"
     t.text "avatar"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_plans_on_category_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -72,6 +80,8 @@ ActiveRecord::Schema.define(version: 20180818044556) do
     t.string "last_name", null: false
     t.string "first_name", null: false
     t.string "image"
+    t.string "uid"
+    t.string "provider"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -80,4 +90,5 @@ ActiveRecord::Schema.define(version: 20180818044556) do
   add_foreign_key "courses", "plans"
   add_foreign_key "orders", "addresses"
   add_foreign_key "orders", "courses"
+  add_foreign_key "plans", "categories"
 end
