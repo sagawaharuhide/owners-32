@@ -7,7 +7,6 @@ class OrdersController < ApplicationController
   end
 
   def input
-    @addresses = current_user.addresses
     @order = Order.new(order_params)
   end
 
@@ -21,7 +20,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @addresses = current_user.addresses
     @plan = @course.plan
     @order = Order.new(order_params)
     @address = @order.address

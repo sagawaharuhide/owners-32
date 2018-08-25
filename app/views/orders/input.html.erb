@@ -64,7 +64,7 @@
                   </div>
                 </div>
               </div>
-              <% @addresses.each do |address| %>
+              <% current_user.addresses.each do |address| %>
               <%= f.radio_button :address_id, address.id %> <%= address.full_name %>様 〒<%= address.postal_code.insert(3,"-") %> <%= address.prefecture %> <%= address.city %> <%= address.house_number %> <br />
               <% end %>
               <a class="address_button" href="javascript:showAddressForm(0)"> 新しいお届け先を追加する </a>
