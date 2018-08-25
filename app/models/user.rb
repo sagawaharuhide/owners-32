@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   has_many :addresses
   has_many :orders, through: :addresses
+  has_many :likes, dependent: :destroy
+  has_many :plans, through: :likes
 end

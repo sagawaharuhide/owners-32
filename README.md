@@ -7,6 +7,10 @@
 ### Association
 - has_many : addresses
 - has_many : orders, through: :addresses
+- has_many : plans, through: :likes
+- has_many : likes
+
+
 
 ## addressesテーブル
 
@@ -37,6 +41,8 @@
 
 ### Association
 - has_many : courses
+- has_many : users, through: :likes
+- has_many : likes
 
 ## coursesテーブル
 
@@ -62,3 +68,14 @@
 - belongs_to : course
 - delegate_to : user, to: :address
 - belongs_to : address
+
+## likesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|:user, null: false, foreign_key: true|
+|plan_id|references|:plan, null: false, foreign_key: true|
+
+### Association
+- belongs_to : user
+- belongs_to : plan
