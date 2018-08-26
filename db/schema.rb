@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180824081007) do
+ActiveRecord::Schema.define(version: 20180825075835) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "full_name", null: false
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20180824081007) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "category", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category"], name: "index_categories_on_category"
   end
 
   create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -63,6 +70,8 @@ ActiveRecord::Schema.define(version: 20180824081007) do
     t.text "img_url"
     t.text "title"
     t.text "avatar"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_plans_on_category_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -91,4 +100,5 @@ ActiveRecord::Schema.define(version: 20180824081007) do
   add_foreign_key "likes", "users"
   add_foreign_key "orders", "addresses"
   add_foreign_key "orders", "courses"
+  add_foreign_key "plans", "categories"
 end

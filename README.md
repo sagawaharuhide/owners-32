@@ -10,8 +10,6 @@
 - has_many : plans, through: :likes
 - has_many : likes
 
-
-
 ## addressesテーブル
 
 |Column|Type|Options|
@@ -41,8 +39,17 @@
 
 ### Association
 - has_many : courses
+- belongs_to : category
 - has_many : users, through: :likes
 - has_many : likes
+
+## categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category|string|null: false|
+
+### Association
+- has_many :plans
 
 ## coursesテーブル
 
