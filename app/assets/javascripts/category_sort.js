@@ -32,7 +32,7 @@ $(function(){
       $('.plan_card_medium').remove();
       plans.forEach(function(plan) {
       var price = plan.courses[0].price.toString().replace(/(\d)(?=(\d{3})+$)/g , '$1,'); //正規表現で数値を3桁区切り
-        var html = sortPlans(plan, price);
+      var html = sortPlans(plan, price);
       $(html).appendTo('.float-cards')
       });
     });
