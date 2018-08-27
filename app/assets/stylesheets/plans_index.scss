@@ -138,6 +138,7 @@ header{
 .dropdown-categories {
   &__title {
     padding-left: 28px;
+    display: inline-block;
   }
   &__children {
     position: absolute;
