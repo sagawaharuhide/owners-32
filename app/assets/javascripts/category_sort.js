@@ -20,18 +20,17 @@ $(function(){
     return html;
   }
 
-  $('.category_sort_list').on('click', function(){
+  $('.category_sort_list').on('click', function() {
     var categoryId = $(this).data('id');
-    console.log(categoryId);
     $.ajax({
       url: 'plans/search',
       type: 'GET',
       data: { id: categoryId },
       dataType: 'json'
     })
-    .done(function(plans){
+    .done(function(plans) {
       $('.plan_card_medium').remove();
-      plans.forEach(function(plan){
+      plans.forEach(function(plan) {
         var html = sortPlans(plan);
       $(html).appendTo('.float-cards')
       });
