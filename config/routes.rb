@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'plans#index'
-  resources :plans, only: [:index, :show]
+  resources :plans, only: [:index, :show] do
+    collection do
+      get 'search'
+    end
+  end
   resources :courses, only: [:index, :show] do
     resources :orders, only: [:new, :create]do
       collection do
