@@ -5,7 +5,8 @@
   </section>
   <section id="about_owners" class="container mb-5 mt-5">
    <div class="text-center">
-    <a href="/about"> <img src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/banner/banner-about-owners.jpg" alt="とっておきの、オーナーになろう。OWNERSについて">
+    <a href="/about">
+      <img src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/banner/banner-about-owners.jpg" alt="とっておきの、オーナーになろう。OWNERSについて">
     </a>
    </div>
   </section>
@@ -16,7 +17,17 @@
       <div class="line"></div>
       </div>
     </div>
-    <div class="plans_pc d-flex justify-content-center flex-wrap">
+    <ul class="dropdown-categories">
+      <li class="dropdown-categories__title">カテゴリーから探す
+        <%= image_tag 'down-arrow.png', class:'down-arrow' %>
+        <ul class="dropdown-categories__children">
+        <% @categories.each_with_index do |category, index| %>
+          <li class="category_sort_list" id="category_sort_list-<%= index %>" data-id="<%= category.id %>"><%= category.category%></li>
+        <% end %>
+        </ul>
+      </li>
+    </ul>
+    <div class="plans_pc d-flex justify-content-center flex-wrap float-cards">
       <% @plans.each do |plan| %>
         <%= link_to plan_path(plan), class:"plan_card_medium" do %>
           <div class="card float-card">
