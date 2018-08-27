@@ -12,7 +12,9 @@ class PlansController < ApplicationController
 
   def search
     @plans = Plan.where(category_id: params[:id])
-    render json: @plans
+    respond_to do |f|
+      f.json { render json: @plans.to_json( include: [:courses]) }
+    end
   end
 
 end
