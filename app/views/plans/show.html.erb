@@ -71,7 +71,8 @@
             </div>
             <div class="header">
               <h5 class="card-title"><%= course.name %></h5>
-              <div class="price mb-3"> <%= course.price %> 円（消費税・送料込み）</div>
+              <div class="price mb-3"> <%= number_to_currency(course.price, locale: 'jp') %>（消費税・送料込み）
+              </div>
               <%= link_to new_course_order_path(course), class:"text-center be-an-owner-btn" do %>
                 このコースでオーナーになる
               <% end %>

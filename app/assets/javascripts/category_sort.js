@@ -1,6 +1,6 @@
 $(function(){
 
-  function sortPlans(plan) {
+  function sortPlans(plan, price) {
     var html =
     `<a href="/plans/${ plan.id }" class="plan_card_medium">
       <div class="card float-card">
@@ -13,7 +13,7 @@ $(function(){
           <div class="location d-lg-inline-block">
           <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon">${ plan.area }
           </div>
-          <div class="price">###円</div>
+          <div class="price">${ price }円〜</div>
         </div>
       </div>`
     ;
@@ -31,7 +31,8 @@ $(function(){
     .done(function(plans) {
       $('.plan_card_medium').remove();
       plans.forEach(function(plan) {
-        var html = sortPlans(plan);
+      var price = plan.courses[0].price.toString().replace(/(\d)(?=(\d{3})+$)/g , '$1,'); //正規表現で数値を3桁区切り
+        var html = sortPlans(plan, price);
       $(html).appendTo('.float-cards')
       });
     });
