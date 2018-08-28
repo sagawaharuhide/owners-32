@@ -221,6 +221,18 @@ header{
         }
       }
      .card-body {
+       .limit {
+        text-align: center;
+        background-color: #f1ec00;
+        box-shadow: 2px 2px 0 0 rgba(152,150,68,.5);
+        color: #2d1d09;
+        position: absolute;
+        top: 270px;
+        right: 10px;
+        width: 58px;
+        height: 58px;
+        padding: .5rem;
+       }
        .avatar {
          background-position: center center;
          background-repeat: no-repeat;
