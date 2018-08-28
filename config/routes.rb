@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root 'plans#index'
   resources :plans, only: [:index, :show] do
     collection do
-      get 'search'
+      get 'sort_by_category'
+      get 'sort_by_price'
     end
   end
   resources :courses, only: [:index, :show] do

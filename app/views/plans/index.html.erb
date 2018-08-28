@@ -20,10 +20,16 @@
     <ul class="dropdown-categories">
       <li class="dropdown-categories__title">カテゴリーから探す
         <%= image_tag 'down-arrow.png', class:'down-arrow' %>
-        <ul class="dropdown-categories__children">
+        <ul class="dropdown-categories__children" id="">
         <% @categories.each_with_index do |category, index| %>
-          <li class="category_sort_list" id="category_sort_list-<%= index %>" data-id="<%= category.id %>"><%= category.category%></li>
+          <li class="category_sort_list sort-by-category" id="category_sort_list-<%= index %>" data-id="<%= category.id %>"><%= category.category%></li>
         <% end %>
+        </ul>
+      </li>
+      <li class="dropdown-categories__title">並べ替え
+        <%= image_tag 'down-arrow.png', class:'down-arrow' %>
+        <ul class="dropdown-categories__children">
+          <li class="category_sort_list sort-by-price">価格順</li>
         </ul>
       </li>
     </ul>

@@ -1,7 +1,7 @@
 $(function(){
 
   $('.down-arrow').hover(function(){
-    $('.dropdown-categories__children').slideDown();
+    $(this).parent().find('ul').slideDown();
   });
 
   $(document).on('click', function(){ //欄外クリックでslideUp
