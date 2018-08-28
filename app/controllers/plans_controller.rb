@@ -24,4 +24,11 @@ class PlansController < ApplicationController
     end
   end
 
+  def sort_by_deadline
+    @plans = Plan.order('dead_line ASC')
+    respond_to do |f|
+      f.json { render json: @plans.to_json( include: [:courses]) }
+    end
+  end
+
 end

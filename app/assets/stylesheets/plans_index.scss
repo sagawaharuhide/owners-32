@@ -233,6 +233,17 @@ header{
         height: 58px;
         padding: .5rem;
        }
+       .js-limit {
+        text-align: center;
+        background-color: #fff;
+        box-shadow: 2px 2px 0 0 rgba(152, 150, 68, 0.5);
+        color: #2d1d09;
+        position: absolute;
+        top: 293px;
+        right: 10px;
+        padding: .5rem;
+        border-radius: 20px;
+       }
        .avatar {
          background-position: center center;
          background-repeat: no-repeat;
