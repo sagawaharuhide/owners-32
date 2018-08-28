@@ -6,7 +6,7 @@
   <section id="about_owners" class="container mb-5 mt-5">
    <div class="text-center">
     <a href="/about">
-      <img src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/banner/banner-about-owners.jpg" alt="とっておきの、オーナーになろう。OWNERSについて">
+      <%= image_tag 'https://d1xgtamobon6ik.cloudfront.net/static/images/index/banner/banner-about-owners.jpg' %>
     </a>
    </div>
   </section>
@@ -22,17 +22,33 @@
         <%= image_tag 'down-arrow.png', class:'down-arrow' %>
         <ul class="dropdown-categories__children">
         <% @categories.each_with_index do |category, index| %>
-          <li class="category_sort_list" id="category_sort_list-<%= index %>" data-id="<%= category.id %>"><%= category.category%></li>
+          <li class="category_sort_list sort-by-category" id="category_sort_list-<%= index %>" data-id="<%= category.id %>"><%= category.category%></li>
         <% end %>
+        </ul>
+      </li>
+      <li class="dropdown-categories__title">並べ替え
+        <%= image_tag 'down-arrow.png', class:'down-arrow' %>
+        <ul class="dropdown-categories__children">
+          <li class="category_sort_list sort-by-price">価格順</li>
         </ul>
       </li>
     </ul>
     <div class="plans_pc d-flex justify-content-center flex-wrap float-cards">
       <% @plans.each do |plan| %>
-        <%= link_to plan_path(plan), class:"plan_card_medium" do %>
+      <div class="plan_card_medium">
           <div class="card float-card">
+            <%= link_to plan_path(plan) do %>
             <img class="card-img-top" src="<%= plan.img_url %>" alt="Card image cap">
+            <% end %>
+            <div class="like_link like_<%= plan.id %>">
+              <%= render partial: "likes/like_links", locals: { plan: plan } %>
+            </div>
             <div class="card-body">
+              <% if plan.display_deadline.present? && plan.display_deadline > 0 %>
+              <div class="limit">残り<br/><strong><%= plan.display_deadline %></strong>日</div>
+              <% elsif plan.display_deadline.present? && plan.display_deadline < 0 %>
+              <div class="limit">募集<br/>終了</div>
+              <% end %>
               <div class="avatar" style="background-image:url(<%= plan.avatar %>);">
               </div>
               <h5 class="card_title"><%= plan.title %></h5>
@@ -40,11 +56,11 @@
                 <div class="location d-lg-inline-block">
                   <img class="location_icon" src="https://d1xgtamobon6ik.cloudfront.net/static/images/index/icon-location.svg" alt="location_icon"><%= plan.area %>
                 </div>
-                <div class="price">###円</div>
+                <div class="price"><%= number_to_currency(plan.courses.minimum(:price), locale: 'jp') %>〜</div>
               </div>
             </div>
           </div>
-        <% end %>
+      </div>
       <% end %>
     </div>
   </section>

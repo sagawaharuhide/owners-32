@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   root 'plans#index'
   resources :plans, only: [:index, :show] do
+    resources :likes, only: [:create, :destroy]
     collection do
-      get 'search'
+      get 'sort_by_category'
+      get 'sort_by_price'
     end
   end
   resources :courses, only: [:index, :show] do
