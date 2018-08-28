@@ -39,6 +39,9 @@
           <div class="card float-card">
             <img class="card-img-top" src="<%= plan.img_url %>" alt="Card image cap">
             <div class="card-body">
+              <% if plan.display_deadline.present? %>
+              <div class="limit">残り<br/><strong><%= plan.display_deadline %></strong>日</div>
+              <% end %>
               <div class="avatar" style="background-image:url(<%= plan.avatar %>);">
               </div>
               <h5 class="card_title"><%= plan.title %></h5>
