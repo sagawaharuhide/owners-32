@@ -28,8 +28,16 @@
         <div class="col-12 col-md-6">
           <div class="d-block d-md-none mt-5">
           </div>
-          <h2>新着手づくり日誌</h2>
-          <div class="diary-posts"> </div>
+          <h2>お気に入りプラン</h2>
+          <div class="favorite-list">
+            <% if current_user.likes.present? %>
+              <% current_user.plans.each do |plan| %>
+                <ul>
+                  <li><%= link_to "#{plan.producer}", plan_path(plan), style: "color:black;" %></li>
+                </ul>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
       <div class="row">
