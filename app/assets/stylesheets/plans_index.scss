@@ -197,6 +197,18 @@ header{
      }
      .fa-star {
         &:before {
+            content: "★";
+            font-family: Verdana;
+            font-weight: bold;
+            font-size: 40px;
+            color: #17a2b8;
+            position: absolute;
+            top: 0;
+            left: 80%;
+        }
+      }
+      .fa-empty-star {
+        &:before {
             content: "☆";
             font-family: Verdana;
             font-weight: bold;

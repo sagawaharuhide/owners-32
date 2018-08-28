@@ -34,7 +34,9 @@
             <%= link_to plan_path(plan) do %>
             <img class="card-img-top" src="<%= plan.img_url %>" alt="Card image cap">
             <% end %>
-            <i class="fal fa-star"></i>
+            <div class="like_link like_<%= plan.id %>">
+              <%= render partial: "likes/like_links", locals: { plan: plan } %>
+            </div>
             <div class="card-body">
               <div class="avatar" style="background-image:url(<%= plan.avatar %>);">
               </div>
