@@ -67,9 +67,9 @@
               <% current_user.addresses.each do |address| %>
               <%= f.radio_button :address_id, address.id %> <%= address.full_name %>様 〒<%= address.postal_code.insert(3,"-") %> <%= address.prefecture %> <%= address.city %> <%= address.house_number %> <br />
               <% end %>
-              <a class="address_button" href="javascript:showAddressForm(0)"> 新しいお届け先を追加する </a>
-              <div class="add-addresses-container">
-                <%= form_for [@addresses], html: {class: "h-adr"} do |a| %>
+              <div class="address_button" id="address_button_js"> 新しいお届け先を追加する </div>
+              <div class="add-addresses-container" id="address_js">
+                <%= form_for [@course, @order], id: "new_address" do |a| %>
                   <span class="p-country-name" style="display:none;">Japan</span>
                   <div class="form-group">
                     <label for="full_name">氏名:※</label>
@@ -105,7 +105,7 @@
                   <input type="hidden" class="p-country-name" value="Japan">
                   <input id="csrf_token" name="csrf_token" type="hidden" value="Ijk1YTEyOTgwMGUwZDQ4N2Q1ZTMyOWFhODE0ZTdlNTc2ZTI5MGMwNWEi.DlauIw.5DUU-ZE-jgL6_Pfd56x6ICjOszA">
                   <div>
-                    <button type="submit" class="green add-addresses-button" id="submit_button">送信</button>
+                    <button type="submit" class="green add-addresses-button" id="submit_button">登録</button>
                   </div>
                 <%end%>
               </div>
