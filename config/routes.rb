@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get 'sort_by_category'
       get 'sort_by_price'
+      get 'sort_by_deadline'
     end
   end
   resources :courses, only: [:index, :show] do
