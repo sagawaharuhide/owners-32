@@ -20,7 +20,7 @@
     <ul class="dropdown-categories">
       <li class="dropdown-categories__title">カテゴリーから探す
         <%= image_tag 'down-arrow.png', class:'down-arrow' %>
-        <ul class="dropdown-categories__children" id="">
+        <ul class="dropdown-categories__children">
         <% @categories.each_with_index do |category, index| %>
           <li class="category_sort_list sort-by-category" id="category_sort_list-<%= index %>" data-id="<%= category.id %>"><%= category.category%></li>
         <% end %>
