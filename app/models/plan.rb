@@ -9,9 +9,7 @@ class Plan < ApplicationRecord
     today = Date.today
     deadline = dead_line.to_date
     diff = (deadline - today).to_i
-    if diff.between?(0,30)
-      return diff
-    end
+    return diff if diff < 30
   end
 
 end
