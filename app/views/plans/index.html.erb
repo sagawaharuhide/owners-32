@@ -35,9 +35,14 @@
     </ul>
     <div class="plans_pc d-flex justify-content-center flex-wrap float-cards">
       <% @plans.each do |plan| %>
-        <%= link_to plan_path(plan), class:"plan_card_medium" do %>
+      <div class="plan_card_medium">
           <div class="card float-card">
+            <%= link_to plan_path(plan) do %>
             <img class="card-img-top" src="<%= plan.img_url %>" alt="Card image cap">
+            <% end %>
+            <div class="like_link like_<%= plan.id %>">
+              <%= render partial: "likes/like_links", locals: { plan: plan } %>
+            </div>
             <div class="card-body">
               <% if plan.display_deadline.present? && plan.display_deadline > 0 %>
               <div class="limit">残り<br/><strong><%= plan.display_deadline %></strong>日</div>
@@ -55,7 +60,7 @@
               </div>
             </div>
           </div>
-        <% end %>
+      </div>
       <% end %>
     </div>
   </section>

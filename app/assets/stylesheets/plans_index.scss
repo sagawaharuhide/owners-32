@@ -189,12 +189,37 @@ header{
      border: 0;
      border-radius: 0;
      background-color: #f1eee8;
+     position: relative;
      .card-img-top{
        width: 338px;
        height: 338px;
        object-fit: cover;
        border: 2px solid #fff;
      }
+     .fa-star {
+        &:before {
+            content: "★";
+            font-family: Verdana;
+            font-weight: bold;
+            font-size: 40px;
+            color: #17a2b8;
+            position: absolute;
+            top: 0;
+            left: 80%;
+        }
+      }
+      .fa-empty-star {
+        &:before {
+            content: "☆";
+            font-family: Verdana;
+            font-weight: bold;
+            font-size: 40px;
+            color: #17a2b8;
+            position: absolute;
+            top: 0;
+            left: 80%;
+        }
+      }
      .card-body {
        .limit {
         text-align: center;
@@ -233,6 +258,7 @@ header{
         font-size: 16px;
         height: calc(1.4 * 3 * 16px);
        }
+
        .card_footer {
          position: absolute;
          bottom: 5px;
@@ -276,4 +302,5 @@ footer {
     font-size: 14px;
   }
 }
+
 

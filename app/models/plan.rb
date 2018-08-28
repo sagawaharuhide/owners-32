@@ -5,6 +5,10 @@ class Plan < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :users, through: :likes
 
+  def like_user(id)
+    likes.find_by(user_id: id)
+  end
+
   def display_deadline
     today = Date.today
     deadline = dead_line.to_date
