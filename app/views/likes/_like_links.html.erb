@@ -1,9 +1,13 @@
-<% if plan.like_user(current_user.id) %>
-  <%= link_to plan_like_path(plan, plan.like_user(current_user)), method: :delete, remote: true do %>
-  <i class="fa-star"></i>
+<% if user_signed_in? %>
+  <% if plan.like_user(current_user.id) %>
+    <%= link_to plan_like_path(plan, plan.like_user(current_user)), method: :delete, remote: true do %>
+    <i class="fa-star"></i>
+    <% end %>
+  <% else %>
+    <%= link_to plan_likes_path(plan), method: :post, remote: true do %>
+    <i class="fa-empty-star"></i>
+    <% end %>
   <% end %>
 <% else %>
-  <%= link_to plan_likes_path(plan), method: :post, remote: true do %>
   <i class="fa-empty-star"></i>
-  <% end %>
 <% end %>
