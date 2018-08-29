@@ -19,6 +19,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def purchased
+  end
+
   private
 
   def user_params
