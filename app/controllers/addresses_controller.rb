@@ -12,9 +12,7 @@ class AddressesController < ApplicationController
   def create
     @address = @user.addresses.new(address_params)
     if  @address.save
-      respond_to do |format|
-        format.html {redirect_to user_addresses_path(current_user)}
-        format.json
+        redirect_to user_addresses_path(current_user)
     else
       @addresses = @user.addresses.includes(:user)
       render :new

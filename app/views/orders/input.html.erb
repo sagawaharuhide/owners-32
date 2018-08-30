@@ -69,7 +69,6 @@
               <% end %>
               <div class="address_button" id="address_button_js"> 新しいお届け先を追加する </div>
               <div class="add-addresses-container" id="address_js">
-                <%= form_for [@course, @order], id: "new_address" do |a| %>
                   <span class="p-country-name" style="display:none;">Japan</span>
                   <div class="form-group">
                     <label for="full_name">氏名:※</label>
@@ -104,10 +103,6 @@
                   </div>
                   <input type="hidden" class="p-country-name" value="Japan">
                   <input id="csrf_token" name="csrf_token" type="hidden" value="Ijk1YTEyOTgwMGUwZDQ4N2Q1ZTMyOWFhODE0ZTdlNTc2ZTI5MGMwNWEi.DlauIw.5DUU-ZE-jgL6_Pfd56x6ICjOszA">
-                  <div>
-                    <button type="submit" class="green add-addresses-button" id="submit_button">登録</button>
-                  </div>
-                <%end%>
               </div>
             </td>
           </tr>
@@ -130,9 +125,9 @@
   </div>
   <div class="row d-none d-lg-block">
     <div class="col p-0 d-flex justify-content-end">
-      <%= f.submit '戻る', name: 'back', class: 'white' %>
+      <%= link_to '戻る',new_course_order_path, name: 'back', class: 'white' %>
         <i class="arrow_left_green"></i>
-      <button type="submit" class="submit_button" id="submit_button_pc">
+      <button type="submit" class="submit_button" id="submit_button_pc" formnovalidate>
         <i class="arrow_right_white"></i> お申込み内容の確認へ
       </button>
     </div>
