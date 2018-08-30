@@ -12,7 +12,7 @@ class AddressesController < ApplicationController
   def create
     @address = @user.addresses.new(address_params)
     if  @address.save
-      redirect_to user_addresses_path(current_user)
+        redirect_to user_addresses_path(current_user)
     else
       @addresses = @user.addresses.includes(:user)
       render :new

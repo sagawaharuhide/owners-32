@@ -58,7 +58,6 @@
             </td>
             <td class="align-top address_info">
               <div class="p-0 m-0 address_container">
-                <%= f.hidden_field :address_id %>
                 <span><%= @address.full_name %> 様</span>
                 <p>〒<%= @address.postal_code.insert(3,"-") %> <%= @address.prefecture %> <%= @address.city %><br><%= @address.house_number %></p>
                 <a class="edit_button" href="/orders/input/167?separated=0">
@@ -106,6 +105,7 @@
     </div>
   </div>
   <div class="row d-none d-lg-block">
+    <%= f.hidden_field :address_id, value: @address.id %>
     <div class="col p-0 d-flex justify-content-end">
       <%= f.submit '戻る', name: 'back', class: 'white' %>
         <i class="arrow_left_green"></i>
