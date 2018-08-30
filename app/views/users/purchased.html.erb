@@ -14,8 +14,8 @@
             </tr>
           </thead>
         </table>
-        <% if current_user.orders.present? %>
-          <% current_user.orders.each do |order| %>
+        <% if @orders.present? %>
+          <% @orders.each do |order| %>
             <table class="line-table">
               <thead>
                 <tr>
