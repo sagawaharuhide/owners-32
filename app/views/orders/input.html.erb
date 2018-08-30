@@ -67,96 +67,42 @@
               <% current_user.addresses.each do |address| %>
               <%= f.radio_button :address_id, address.id %> <%= address.full_name %>様 〒<%= address.postal_code.insert(3,"-") %> <%= address.prefecture %> <%= address.city %> <%= address.house_number %> <br />
               <% end %>
-              <a class="address_button" href="javascript:showAddressForm(0)"> 新しいお届け先を追加する </a>
-              <div class="collapse" id="collapse_0">
-                <div class="card card-body">
-                  <div class="h-adr">
-                    <div class="form-group">
-                      <label for="name[0]">氏名:</label>
-                      <label class="required">※ 必須</label>
-                      <input type="text" name="name[0]" class="form-control" id="name[0]" placeholder="氏名" value="">
-                      <div class="invalid-feedback"> 氏名を入力して下さい。 </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="zip_code_1[0]">郵便番号:</label>
-                      <label class="required">※ 必須</label>
-                      <div class="form-inline">
-                        <input type="text" class="form-control postal_code p-postal-code" name="zip_code_1[0]" placeholder="000" maxlength="3" value="">
-                        <span>-</span>
-                        <input type="text" class="form-control postal_code p-postal-code" name="zip_code_2[0]" placeholder="0000" maxlength="4" value="">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="state[]">都道府県:</label>
-                      <label class="required">※ 必須</label>
-                      <select name="state[0]" class="form-control p-region">
-                        <option value="">-</option>
-                        <option value="北海道">北海道</option>
-                        <option value="青森県">青森県</option>
-                        <option value="岩手県">岩手県</option>
-                        <option value="宮城県">宮城県</option>
-                        <option value="秋田県">秋田県</option>
-                        <option value="山形県">山形県</option> <option value="福島県">福島県</option> <option value="茨城県">茨城県</option> <option value="栃木県">栃木県</option>
-                        <option value="群馬県">群馬県</option>
-                        <option value="埼玉県">埼玉県</option>
-                        <option value="千葉県">千葉県</option>
-                        <option value="東京都">東京都</option>
-                        <option value="神奈川県">神奈川県</option>
-                        <option value="新潟県">新潟県</option>
-                        <option value="富山県">富山県</option>
-                        <option value="石川県">石川県</option>
-                        <option value="福井県">福井県</option>
-                        <option value="山梨県">山梨県</option>
-                        <option value="長野県">長野県</option>
-                        <option value="岐阜県">岐阜県</option>
-                        <option value="静岡県">静岡県</option>
-                        <option value="愛知県">愛知県</option>
-                        <option value="三重県">三重県</option>
-                        <option value="滋賀県">滋賀県</option>
-                        <option value="京都府">京都府</option>
-                        <option value="大阪府">大阪府</option>
-                        <option value="兵庫県">兵庫県</option>
-                        <option value="奈良県">奈良県</option>
-                        <option value="和歌山県">和歌山県</option>
-                        <option value="鳥取県">鳥取県</option>
-                        <option value="島根県">島根県</option>
-                        <option value="岡山県">岡山県</option>
-                        <option value="広島県">広島県</option>
-                        <option value="山口県">山口県</option>
-                        <option value="徳島県">徳島県</option>
-                        <option value="香川県">香川県</option>
-                        <option value="愛媛県">愛媛県</option>
-                        <option value="高知県">高知県</option>
-                        <option value="福岡県">福岡県</option>
-                        <option value="佐賀県">佐賀県</option>
-                        <option value="長崎県">長崎県</option>
-                        <option value="熊本県">熊本県</option>
-                        <option value="大分県">大分県</option>
-                        <option value="宮崎県">宮崎県</option>
-                        <option value="鹿児島県">鹿児島県</option>
-                        <option value="沖縄県">沖縄県</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label>住所1:</label>
-                      <label class="required">※ 必須</label>
-                      <input type="text" class="form-control p-locality p-street-address" name="address_1[0]" placeholder="例）台東区松が谷" value="">
-                      <div class="invalid-feedback"> 住所を入力して下さい。 </div>
-                    </div>
-                    <div class="form-group">
-                      <label>住所2 (番地, 建物名):※ </label>
-                      <label class="required">※ 必須</label>
-                      <input type="text" class="form-control p-extended-address" name="address_2[0]" placeholder="例）1-2-3 ○○ビル3階" value="">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">電話番号:</label>
-                      <label class="required">※ 必須</label>
-                      <input type="tel" class="form-control" name="tel[0]" placeholder="例）00-0000-0000" value="">
-                      <div class="invalid-feedback"> 電話番号を入力して下さい。 </div>
-                    </div>
-                    <input type="hidden" class="p-country-name" value="Japan">
+              <div class="address_button" id="address_button_js"> 新しいお届け先を追加する </div>
+              <div class="add-addresses-container" id="address_js">
+                  <span class="p-country-name" style="display:none;">Japan</span>
+                  <div class="form-group">
+                    <label for="full_name">氏名:※</label>
+                    <input type="text" name="address[full_name]" class="form-control" id="full_name" placeholder="氏名" value="" required="">
+                    <div class="invalid-feedback"> 氏名を入力して下さい。 </div>
                   </div>
-                </div>
+                  <div class="form-group">
+                    <label for="postal_code">郵便番号:※</label>
+                    <em>ハイフン (-) 無しの半角数字で入力してください。</em>
+                    <div class="form-inline">
+                      <input type="text" class="form-control postal_code p-postal-code" name="address[postal_code]" placeholder="0000000" maxlength="7" value="" required="">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="prefecture">都道府県:※ </label>
+                    <%= render partial: 'states' %>
+                  </div>
+                  <div class="form-group">
+                    <label for="city">住所1:※ </label>
+                    <input type="text" class="form-control p-locality p-street-address" name="address[city]" placeholder="例）台東区松が谷" value="" required="">
+                    <div class="invalid-feedback"> 住所を入力して下さい。 </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="house_number">住所2 (番地, 建物名):※ </label>
+                    <input type="text" class="form-control p-extended-address" name="address[house_number]" placeholder="例）1-2-3 ○○ビル3階" value="" required="">
+                  </div>
+                  <div class="form-group">
+                    <label for="tel">電話番号:※</label>
+                    <em>ハイフン (-) 無しの半角数字で入力してください。</em>
+                    <input type="tel" class="form-control add-tell-number" name="address[tel]" placeholder="例）08011112222" value="" required="">
+                    <div class="invalid-feedback"> 電話番号を入力して下さい。 </div>
+                  </div>
+                  <input type="hidden" class="p-country-name" value="Japan">
+                  <input id="csrf_token" name="csrf_token" type="hidden" value="Ijk1YTEyOTgwMGUwZDQ4N2Q1ZTMyOWFhODE0ZTdlNTc2ZTI5MGMwNWEi.DlauIw.5DUU-ZE-jgL6_Pfd56x6ICjOszA">
               </div>
             </td>
           </tr>
@@ -179,9 +125,9 @@
   </div>
   <div class="row d-none d-lg-block">
     <div class="col p-0 d-flex justify-content-end">
-      <%= f.submit '戻る', name: 'back', class: 'white' %>
+      <%= link_to '戻る',new_course_order_path, name: 'back', class: 'white' %>
         <i class="arrow_left_green"></i>
-      <button type="submit" class="submit_button" id="submit_button_pc">
+      <button type="submit" class="submit_button" id="submit_button_pc" formnovalidate>
         <i class="arrow_right_white"></i> お申込み内容の確認へ
       </button>
     </div>
