@@ -1,0 +1,34 @@
+<div class="mypage_container">
+  <div class="mx-auto mypage_main_pc">
+   <%= render 'sidebar' %>
+    <div class="mypage_main_contents">
+      <h2>購入履歴一覧</h2>
+      <div class="d-none d-lg-block mypage_component mypage-purchased-history ">
+        <table class="line-table">
+          <thead>
+            <tr>
+              <th nowrap="">コース名</th>
+              <th class="order-total-quantity" nowrap="">個数</th>
+              <th class="order-total-price" nowrap="">合計</th>
+              <th class="order-purchased-time" nowrap="">お申込み日時</th>
+            </tr>
+          </thead>
+        </table>
+        <% if @orders.present? %>
+          <% @orders.each do |order| %>
+            <table class="line-table">
+              <thead>
+                <tr>
+                  <th nowrap=""><%= order.course.name %></th>
+                  <th class="order-total-quantity" nowrap=""><%= order.quantity  %></th>
+                  <th class="order-total-price" nowrap=""><%= order.course.price * order.quantity %>円</th>
+                  <th class="order-purchased-time"nowrap=""><%= order.created_at.to_s %></th>
+                </tr>
+              </thead>
+            </table>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
