@@ -10,7 +10,7 @@
       <%= link_to "マイページ", user_path(current_user) %>
       <%= link_to "アドレス帳", user_addresses_path(current_user) %>
       <%= link_to "アカウント設定", edit_user_path(current_user) %>
-      <a href="#"><i></i>購入履歴</a>
+      <%= link_to "購入履歴",  purchased_users_path(current_user) %>
     </nav>
   </div>
   <div class="text-center contact-to-owners">

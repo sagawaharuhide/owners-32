@@ -1,0 +1,39 @@
+.mypage-purchased-history {
+  padding: 20px;
+  position: relative;
+  background: #fff;
+  border-radius: 9px;
+  table {
+    table-layout: fixed;
+  }
+  .line-table {
+    border: 2px solid #d2cec7;
+    width: 100%;
+    th {
+      padding: 10px;
+      border-left: 2px solid #d2cec7;
+      font-weight: 700;
+      width: 50%;
+    }
+    .order-total-quantity {
+    width: 55px;
+    }
+    .order-total-price {
+    width: 90px;
+    }
+    .order-purchased-time {
+    width: 160px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

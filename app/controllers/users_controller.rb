@@ -19,6 +19,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def purchased
+    @orders = current_user.orders.order(created_at: :desc)
+  end
+
   private
 
   def user_params
