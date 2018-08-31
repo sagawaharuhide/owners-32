@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_course
+  before_action :sign_in_required, only: [:new]
 
   def new
     @plan = @course.plan
@@ -47,6 +48,10 @@ class OrdersController < ApplicationController
 
     def set_course
       @course = Course.find(params[:course_id])
+    end
+
+    def sign_in_required
+      redirect_to new_user_session_url unless user_signed_in?
     end
 
 end
